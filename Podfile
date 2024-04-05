@@ -24,9 +24,6 @@ target "Dash" do
     pod 'SAMKeychain'
     pod 'NSTimer-Blocks'
     pod 'GZIP'
-    target "Dash App Store" do
-        pod 'HockeySDK'
-    end
 end
 
 post_install do | installer |

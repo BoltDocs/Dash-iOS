@@ -24,9 +24,6 @@
 
 + (DHAppUpdateChecker *)sharedUpdateChecker
 {
-#ifdef APP_STORE
-    return nil;
-#endif
     static dispatch_once_t pred;
     static DHAppUpdateChecker *_checker = nil;
     
