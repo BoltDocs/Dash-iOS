@@ -1,8 +1,6 @@
 PODS:
   - AutoCoding (2.2.3)
-  - DTBonjour (1.1.1)
   - DZNEmptyDataSet (1.7.3)
-  - GZIP (1.2.1)
   - JGMethodSwizzler (2.0.1)
   - KissXML (5.1.2):
     - KissXML/Core (= 5.1.2)
@@ -36,39 +34,25 @@ PODS:
   - MRProgress/Stopable (0.7.0):
     - MRProgress/Helper
   - NSTimer-Blocks (0.0.1)
-  - Reachability (3.2)
-  - SAMKeychain (1.5.3)
-  - "UIActionSheet+Blocks (0.9)"
   - "UIAlertView+Blocks (0.9)"
 
 DEPENDENCIES:
   - AutoCoding
-  - DTBonjour (from `Modified Pods/DTBonjour/DTBonjour.podspec`)
   - DZNEmptyDataSet (from `https://github.com/benrudhart/DZNEmptyDataSet.git`)
-  - GZIP
   - JGMethodSwizzler
   - KissXML (from `Modified Pods/KissXML-5.1.2/KissXML.podspec`)
   - MRProgress (from `Modified Pods/MRProgress/MRProgress.podspec`)
   - NSTimer-Blocks
-  - Reachability
-  - SAMKeychain
-  - "UIActionSheet+Blocks"
   - "UIAlertView+Blocks"
 
 SPEC REPOS:
   trunk:
     - AutoCoding
-    - GZIP
     - JGMethodSwizzler
     - NSTimer-Blocks
-    - Reachability
-    - SAMKeychain
-    - "UIActionSheet+Blocks"
     - "UIAlertView+Blocks"
 
 EXTERNAL SOURCES:
-  DTBonjour:
-    :path: Modified Pods/DTBonjour/DTBonjour.podspec
   DZNEmptyDataSet:
     :git: https://github.com/benrudhart/DZNEmptyDataSet.git
   KissXML:
@@ -83,18 +67,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AutoCoding: 90ca3cbc0d77a37cfff75167d705b44148c5fc51
-  DTBonjour: f221ef5500b109de0eb8cf0f6700c10a27cc8eb0
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
-  GZIP: 7ee835f989fb3c6ea79005fc90b8fa6af710a70d
   JGMethodSwizzler: e0ea5c1c6c55304ec4ef3f54e441400c6735c899
   KissXML: 246c842586bb77110e04fb88e19376d96245c856
   MRProgress: ae0bff676bc83d62cfd5567bba3325f4617c7215
   NSTimer-Blocks: 88faf9aef5f250ead087f3f67ae642517083bf36
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  "UIActionSheet+Blocks": e180b7dad0a721ab7f212ac9742af799008bb358
   "UIAlertView+Blocks": a46c99c5144f6c5dbc7d62fd2a0678daceec89a3
 
-PODFILE CHECKSUM: c3c050ba4280340099b1a8f9fd464bf239b07280
+PODFILE CHECKSUM: 44dfdf806103c761824b3c65031b82eff339d51e
 
 COCOAPODS: 1.15.2

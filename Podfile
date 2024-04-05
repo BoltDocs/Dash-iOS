@@ -11,19 +11,11 @@ target "Dash" do
     pod 'KissXML', :path => 'Modified Pods/KissXML-5.1.2/KissXML.podspec'
     # Modified to make addChild: remove parent
     pod 'UIAlertView+Blocks'
-    pod 'UIActionSheet+Blocks'
     pod 'AutoCoding'
     pod 'DZNEmptyDataSet', :git => 'https://github.com/benrudhart/DZNEmptyDataSet.git'
     pod 'JGMethodSwizzler'
-    pod 'DTBonjour', :path => 'Modified Pods/DTBonjour/DTBonjour.podspec'
-    # Modified to add originating IP address support to DTBonjourDataConnection
-    # Also modified to send a delegate message when a connection closes
-    # Replaced asserts() with ifs() in DTBonjourServer start
-    
-    pod 'Reachability'
-    pod 'SAMKeychain'
+
     pod 'NSTimer-Blocks'
-    pod 'GZIP'
 end
 
 post_install do | installer |
