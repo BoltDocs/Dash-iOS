@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02443EEDCC1F442C91E34654 /* libPods-Dash-Dash App Store.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61D07DA70E11571714738D64 /* libPods-Dash-Dash App Store.a */; };
 		26480C2B1E2E9ABB00E3145E /* docset_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26480C2A1E2E9ABB00E3145E /* docset_icon.png */; };
-		3A2F71C185D6471649E8F3A7 /* libPods-Dash-Dash App Store.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB91D369AD27465BED375AD /* libPods-Dash-Dash App Store.a */; };
 		4303A3BC19C6584F00A7CD85 /* whitespace_tokenizer.c in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3B119C6584F00A7CD85 /* whitespace_tokenizer.c */; };
 		4303A3BD19C6584F00A7CD85 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3B319C6584F00A7CD85 /* FMDatabase.m */; };
 		4303A3BE19C6584F00A7CD85 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3B519C6584F00A7CD85 /* FMDatabaseAdditions.m */; };
 		4303A3BF19C6584F00A7CD85 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3B719C6584F00A7CD85 /* FMResultSet.m */; };
 		4303A3C019C6584F00A7CD85 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3B919C6584F00A7CD85 /* FMDatabasePool.m */; };
 		4303A3C119C6584F00A7CD85 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3BB19C6584F00A7CD85 /* FMDatabaseQueue.m */; };
-		4303A3C419C658B000A7CD85 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303A3C319C658B000A7CD85 /* libsqlite3.dylib */; };
 		4303A3C719C6590000A7CD85 /* DHDocset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3C619C6590000A7CD85 /* DHDocset.m */; };
 		4303A3CD19C65E6A00A7CD85 /* DHDocsetIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3CC19C65E6A00A7CD85 /* DHDocsetIndexer.m */; };
 		4303A3D119C668BC00A7CD85 /* DHType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4303A3D019C668BC00A7CD85 /* DHType.m */; };
@@ -29,7 +28,6 @@
 		43256F0A19F7B4B9003919BA /* UITableView+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43256F0919F7B4B9003919BA /* UITableView+DHUtils.m */; };
 		43280F541DDE4A7B001C2062 /* DHUserRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 43280F531DDE4A7B001C2062 /* DHUserRepo.m */; };
 		43328E3619EDA0D8000D44AE /* scroll_to_current_anchor.js in Resources */ = {isa = PBXBuildFile; fileRef = 43328E3419EDA0D8000D44AE /* scroll_to_current_anchor.js */; };
-		43352F6519C7A69900D4B1D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43352F6419C7A69900D4B1D8 /* libz.dylib */; };
 		4338AB601AAF70AF007B85DE /* DHWebProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4338AB5F1AAF70AF007B85DE /* DHWebProgressView.m */; };
 		433BDDAE1DC3BE7700B0B145 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 433BDDAD1DC3BE7700B0B145 /* ionicons.ttf */; };
 		433BDDB21DC3C3AC00B0B145 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 433BDDB11DC3C3AC00B0B145 /* Settings.bundle */; };
@@ -161,8 +159,6 @@
 		43AB65841ED19D2F00A6EC18 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430C768C19E55E6E006F0DE0 /* MobileCoreServices.framework */; };
 		43AB65851ED19D2F00A6EC18 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 437FE06719E2B4010022ADF4 /* WebKit.framework */; };
 		43AB65861ED19D2F00A6EC18 /* libarchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EE932919CD079600FFF30C /* libarchive.a */; };
-		43AB65871ED19D2F00A6EC18 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43352F6419C7A69900D4B1D8 /* libz.dylib */; };
-		43AB65881ED19D2F00A6EC18 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303A3C319C658B000A7CD85 /* libsqlite3.dylib */; };
 		43AB65891ED19D2F00A6EC18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD2EE719BB8D87007E594D /* CoreGraphics.framework */; };
 		43AB658A1ED19D2F00A6EC18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD2EE919BB8D87007E594D /* UIKit.framework */; };
 		43AB658B1ED19D2F00A6EC18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD2EE519BB8D87007E594D /* Foundation.framework */; };
@@ -249,7 +245,7 @@
 		43FD2EFF19BB8D87007E594D /* DHDocsetBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FD2EFE19BB8D87007E594D /* DHDocsetBrowser.m */; };
 		43FD2F0219BB8D87007E594D /* DHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FD2F0119BB8D87007E594D /* DHWebViewController.m */; };
 		43FD2F0419BB8D87007E594D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43FD2F0319BB8D87007E594D /* Images.xcassets */; };
-		45D28F8ABD1FC392B1930467 /* libPods-Dash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2364AD2032B0714BCD2265 /* libPods-Dash.a */; };
+		7E8DE7D5E122E0462C6F23F2 /* libPods-Dash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8354C10EA45D4715E6C5EF /* libPods-Dash.a */; };
 		F5C39C00200A836D00734571 /* DHDocsetBrowserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C39BFF200A836D00734571 /* DHDocsetBrowserViewModel.m */; };
 /* End PBXBuildFile section */
 
@@ -292,7 +288,6 @@
 		4303A3B919C6584F00A7CD85 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		4303A3BA19C6584F00A7CD85 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
 		4303A3BB19C6584F00A7CD85 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		4303A3C319C658B000A7CD85 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		4303A3C519C6590000A7CD85 /* DHDocset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDocset.h; sourceTree = "<group>"; };
 		4303A3C619C6590000A7CD85 /* DHDocset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDocset.m; sourceTree = "<group>"; };
 		4303A3CB19C65E6A00A7CD85 /* DHDocsetIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDocsetIndexer.h; sourceTree = "<group>"; };
@@ -319,7 +314,6 @@
 		43328E3419EDA0D8000D44AE /* scroll_to_current_anchor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = scroll_to_current_anchor.js; sourceTree = "<group>"; };
 		43352F5F19C7A67200D4B1D8 /* archive_entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = archive_entry.h; sourceTree = "<group>"; };
 		43352F6019C7A67200D4B1D8 /* archive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = archive.h; sourceTree = "<group>"; };
-		43352F6419C7A69900D4B1D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4338AB5E1AAF70AF007B85DE /* DHWebProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHWebProgressView.h; sourceTree = "<group>"; };
 		4338AB5F1AAF70AF007B85DE /* DHWebProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHWebProgressView.m; sourceTree = "<group>"; };
 		433BDDAD1DC3BE7700B0B145 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
@@ -482,12 +476,12 @@
 		43FD2F0019BB8D87007E594D /* DHWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHWebViewController.h; sourceTree = "<group>"; };
 		43FD2F0119BB8D87007E594D /* DHWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHWebViewController.m; sourceTree = "<group>"; };
 		43FD2F0319BB8D87007E594D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		61D07DA70E11571714738D64 /* libPods-Dash-Dash App Store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dash-Dash App Store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		642921D57BB2F4B0450331EC /* Pods-Dash-Dash App Store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dash-Dash App Store.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Dash-Dash App Store/Pods-Dash-Dash App Store.debug.xcconfig"; sourceTree = "<group>"; };
 		6BB3997912C96D08897BF444 /* Pods-Dash-Dash App Store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dash-Dash App Store.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Dash-Dash App Store/Pods-Dash-Dash App Store.release.xcconfig"; sourceTree = "<group>"; };
 		7E45E2662CBB7671D0D844A3 /* Pods-Dash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dash.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Dash/Pods-Dash.release.xcconfig"; sourceTree = "<group>"; };
-		9A2364AD2032B0714BCD2265 /* libPods-Dash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FB91D369AD27465BED375AD /* libPods-Dash-Dash App Store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dash-Dash App Store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE47FF5DEE33300EBFF9AEA /* Pods-Dash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dash.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Dash/Pods-Dash.debug.xcconfig"; sourceTree = "<group>"; };
+		DC8354C10EA45D4715E6C5EF /* libPods-Dash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C39BFE200A836D00734571 /* DHDocsetBrowserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHDocsetBrowserViewModel.h; sourceTree = "<group>"; };
 		F5C39BFF200A836D00734571 /* DHDocsetBrowserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHDocsetBrowserViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -501,13 +495,11 @@
 				43AB65841ED19D2F00A6EC18 /* MobileCoreServices.framework in Frameworks */,
 				43AB65851ED19D2F00A6EC18 /* WebKit.framework in Frameworks */,
 				43AB65861ED19D2F00A6EC18 /* libarchive.a in Frameworks */,
-				43AB65871ED19D2F00A6EC18 /* libz.dylib in Frameworks */,
-				43AB65881ED19D2F00A6EC18 /* libsqlite3.dylib in Frameworks */,
 				43AB65891ED19D2F00A6EC18 /* CoreGraphics.framework in Frameworks */,
 				43AB658A1ED19D2F00A6EC18 /* UIKit.framework in Frameworks */,
 				43AB658B1ED19D2F00A6EC18 /* Foundation.framework in Frameworks */,
-				3A2F71C185D6471649E8F3A7 /* libPods-Dash-Dash App Store.a in Frameworks */,
 				43BCC3E4200442CA00DE24FE /* Apple_Docs_Framework.framework in Frameworks */,
+				02443EEDCC1F442C91E34654 /* libPods-Dash-Dash App Store.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,13 +511,11 @@
 				430C768D19E55E6E006F0DE0 /* MobileCoreServices.framework in Frameworks */,
 				437FE06819E2B4010022ADF4 /* WebKit.framework in Frameworks */,
 				43EE932A19CD079600FFF30C /* libarchive.a in Frameworks */,
-				43352F6519C7A69900D4B1D8 /* libz.dylib in Frameworks */,
-				4303A3C419C658B000A7CD85 /* libsqlite3.dylib in Frameworks */,
 				43FD2EE819BB8D87007E594D /* CoreGraphics.framework in Frameworks */,
 				43FD2EEA19BB8D87007E594D /* UIKit.framework in Frameworks */,
 				43FD2EE619BB8D87007E594D /* Foundation.framework in Frameworks */,
-				45D28F8ABD1FC392B1930467 /* libPods-Dash.a in Frameworks */,
 				43A1C26D200175E500512DB3 /* Apple_Docs_Framework.framework in Frameworks */,
+				7E8DE7D5E122E0462C6F23F2 /* libPods-Dash.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -980,13 +970,11 @@
 				43BB043E19ED0B19000FBC0D /* JavaScriptCore.framework */,
 				430C768C19E55E6E006F0DE0 /* MobileCoreServices.framework */,
 				437FE06719E2B4010022ADF4 /* WebKit.framework */,
-				43352F6419C7A69900D4B1D8 /* libz.dylib */,
-				4303A3C319C658B000A7CD85 /* libsqlite3.dylib */,
 				43FD2EE519BB8D87007E594D /* Foundation.framework */,
 				43FD2EE719BB8D87007E594D /* CoreGraphics.framework */,
 				43FD2EE919BB8D87007E594D /* UIKit.framework */,
-				9A2364AD2032B0714BCD2265 /* libPods-Dash.a */,
-				9FB91D369AD27465BED375AD /* libPods-Dash-Dash App Store.a */,
+				DC8354C10EA45D4715E6C5EF /* libPods-Dash.a */,
+				61D07DA70E11571714738D64 /* libPods-Dash-Dash App Store.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1050,7 +1038,6 @@
 				43AB65821ED19D2F00A6EC18 /* Frameworks */,
 				43AB658D1ED19D2F00A6EC18 /* Resources */,
 				43AB65AC1ED19D2F00A6EC18 /* Git Hashes */,
-				43AB65AD1ED19D2F00A6EC18 /* [CP] Embed Pods Frameworks */,
 				43AB65AE1ED19D2F00A6EC18 /* [CP] Copy Pods Resources */,
 				43A1C2652001708700512DB3 /* Strip Frameworks */,
 			);
@@ -1073,7 +1060,6 @@
 				43FD2EDF19BB8D87007E594D /* Frameworks */,
 				43FD2EE019BB8D87007E594D /* Resources */,
 				43F760BF19EA8C57002BD8A6 /* Git Hashes */,
-				C71793A2EB8A6FB0EA63C3D3 /* [CP] Embed Pods Frameworks */,
 				988D171F13583CC36FBA7412 /* [CP] Copy Pods Resources */,
 				43A1C270200175F700512DB3 /* Strip Frameworks */,
 			);
@@ -1269,28 +1255,13 @@
 			shellPath = /bin/sh;
 			shellScript = "[ -d /Users/bogdan/Projects/Dash ] || exit 0;\n \nPLISTBUDDY=\"/usr/libexec/PlistBuddy\"\nINFOPLISTPATH=\"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}.app/Info.plist\"\n\ncd \"/Users/bogdan/Projects/Dash/Dash/\"\n\nDHDBSearcherCommit=$(git log -n 1 --pretty=format:%h -- DHDBSearcher.m)\n$PLISTBUDDY -c \"Set :DHDBSearcherCommit $DHDBSearcherCommit\" \"${INFOPLISTPATH}\"\nDHDBResultCommit=$(git log -n 1 --pretty=format:%h -- DHDBResult.m)\n$PLISTBUDDY -c \"Set :DHDBResultCommit $DHDBResultCommit\" \"${INFOPLISTPATH}\"\nDHDBUnifiedResultCommit=$(git log -n 1 --pretty=format:%h -- DHDBUnifiedResult.m)\n$PLISTBUDDY -c \"Set :DHDBUnifiedResultCommit $DHDBUnifiedResultCommit\" \"${INFOPLISTPATH}\"\nDHQueuedDBCommit=$(git log -n 1 --pretty=format:%h -- DHQueuedDB.m)\n$PLISTBUDDY -c \"Set :DHQueuedDBCommit $DHQueuedDBCommit\" \"${INFOPLISTPATH}\"\nDHUnifiedQueuedDBCommit=$(git log -n 1 --pretty=format:%h -- DHUnifiedQueuedDB.m)\n$PLISTBUDDY -c \"Set :DHUnifiedQueuedDBCommit $DHUnifiedQueuedDBCommit\" \"${INFOPLISTPATH}\"\nDHTypesCommit=$(git log -n 1 --pretty=format:%h -- DHTypes.m)\n$PLISTBUDDY -c \"Set :DHTypesCommit $DHTypesCommit\" \"${INFOPLISTPATH}\"\nDHDBUnifiedOperationCommit=$(git log -n 1 --pretty=format:%h -- DHDBUnifiedOperation.m)\n$PLISTBUDDY -c \"Set :DHDBUnifiedOperationCommit $DHDBUnifiedOperationCommit\" \"${INFOPLISTPATH}\"\nDHWebPreferencesCommit=$(git log -n 1 --pretty=format:%h -- DHWebPreferences.m)\n$PLISTBUDDY -c \"Set :DHWebPreferencesCommit $DHWebPreferencesCommit\" \"${INFOPLISTPATH}\"\nDHWebViewControllerCommit=$(git log -n 1 --pretty=format:%h -- DHWebViewController.m)\n$PLISTBUDDY -c \"Set :DHWebViewControllerCommit $DHWebViewControllerCommit\" \"${INFOPLISTPATH}\"\nDHDocsetDownloaderCommit=$(git log -n 1 --pretty=format:%h -- DHDocsetDownloader.m)\n$PLISTBUDDY -c \"Set :DHDocsetDownloaderCommit $DHDocsetDownloaderCommit\" \"${INFOPLISTPATH}\"\n\ncd \"/Users/bogdan/Projects/Dash/Resources/\"\n\nPlatformIconsCommit=$(git log -n 1 --pretty=format:%h -- PlatformIcons)\n$PLISTBUDDY -c \"Set :PlatformIconsCommit $PlatformIconsCommit\" \"${INFOPLISTPATH}\"\nTypesCommit=$(git log -n 1 --pretty=format:%h -- Types)\n$PLISTBUDDY -c \"Set :TypesCommit $TypesCommit\" \"${INFOPLISTPATH}\"\nCSSCommit=$(git log -n 1 --pretty=format:%h -- CSS)\n$PLISTBUDDY -c \"Set :CSSCommit $CSSCommit\" \"${INFOPLISTPATH}\"\n";
 		};
-		43AB65AD1ED19D2F00A6EC18 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Dash-Dash App Store/Pods-Dash-Dash App Store-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		43AB65AE1ED19D2F00A6EC18 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-Dash-Dash App Store/Pods-Dash-Dash App Store-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Dash-Dash App Store/Pods-Dash-Dash App Store-resources.sh",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
 			);
@@ -1301,7 +1272,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Dash-Dash App Store/Pods-Dash-Dash App Store-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dash-Dash App Store/Pods-Dash-Dash App Store-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		43F760BF19EA8C57002BD8A6 /* Git Hashes */ = {
@@ -1342,7 +1313,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-Dash/Pods-Dash-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Dash/Pods-Dash-resources.sh",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1351,22 +1322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Dash/Pods-Dash-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C71793A2EB8A6FB0EA63C3D3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Dash/Pods-Dash-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dash/Pods-Dash-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
