@@ -22,7 +22,6 @@
 		430C768D19E55E6E006F0DE0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430C768C19E55E6E006F0DE0 /* MobileCoreServices.framework */; };
 		431108D519C7AE6D0050174C /* DHUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 431108D419C7AE6D0050174C /* DHUnarchiver.m */; };
 		431173DC19DA3513007E238E /* DHImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 431173DB19DA3513007E238E /* DHImageCache.m */; };
-		432321E21AA1BBF70045BA77 /* DHRemoteBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 432321E11AA1BBF70045BA77 /* DHRemoteBrowser.m */; };
 		43256F0719F7A6A8003919BA /* DHBrowserTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43256F0619F7A6A8003919BA /* DHBrowserTableView.m */; };
 		43256F0A19F7B4B9003919BA /* UITableView+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43256F0919F7B4B9003919BA /* UITableView+DHUtils.m */; };
 		43280F541DDE4A7B001C2062 /* DHUserRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 43280F531DDE4A7B001C2062 /* DHUserRepo.m */; };
@@ -37,7 +36,6 @@
 		434AB15719C2738900791E07 /* DHRepoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 434AB15619C2738900791E07 /* DHRepoTableViewCell.m */; };
 		435145971DEB7035000874A8 /* DHCheatRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 435145961DEB7035000874A8 /* DHCheatRepo.m */; };
 		4351459A1DEB7099000874A8 /* DHCheatRepoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 435145991DEB7099000874A8 /* DHCheatRepoList.m */; };
-		43573F781A997EC7000E6F2D /* DHRemoteServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43573F771A997EC7000E6F2D /* DHRemoteServer.m */; };
 		4361651D19CCF8500026F08E /* NSTimer+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4361651C19CCF8500026F08E /* NSTimer+DHUtils.m */; };
 		436DF78019FFA926008814F8 /* DHRepoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 436DF77F19FFA926008814F8 /* DHRepoTableView.m */; };
 		436F3E4319D4F617007BBC25 /* DHRightDetailLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F3E4219D4F617007BBC25 /* DHRightDetailLabel.m */; };
@@ -73,7 +71,6 @@
 		43A1C26E200175E500512DB3 /* Apple_Docs_Framework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43A356CB19FFCE4D0073D143 /* UIViewController+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A356CA19FFCE4D0073D143 /* UIViewController+DHUtils.m */; };
 		43A6D9C919E0D69700780BC8 /* DHDocsetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6D9C819E0D69700780BC8 /* DHDocsetManager.m */; };
-		43AAB7821AAE776800DB76F3 /* DHRemoteProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AAB7811AAE776800DB76F3 /* DHRemoteProtocol.m */; };
 		43AC700119E4530400E0DB43 /* home.html in Resources */ = {isa = PBXBuildFile; fileRef = 43AC700019E4530400E0DB43 /* home.html */; };
 		43AF0E151D1861CE00F0D8A0 /* DHAppleActiveLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AF0E141D1861CE00F0D8A0 /* DHAppleActiveLanguage.m */; };
 		43B0956919BFD19900F8611B /* DHNavigationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B0956819BFD19900F8611B /* DHNavigationAnimator.m */; };
@@ -100,8 +97,6 @@
 		43D7E4F01BB4C62E00FC1DEF /* DHWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D7E4EF1BB4C62E00FC1DEF /* DHWindow.m */; };
 		43DCAEB81A9C3C8500A28A95 /* NSData+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DCAEB71A9C3C8500A28A95 /* NSData+DHUtils.m */; };
 		43DF51941A07B4C0006AB295 /* DHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DF51931A07B4C0006AB295 /* DHNavigationController.m */; };
-		43DFED801A9EBEA5008F7795 /* DHRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DFED7F1A9EBEA5008F7795 /* DHRemote.m */; };
-		43DFED831A9EE104008F7795 /* DHRemoteImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DFED821A9EE104008F7795 /* DHRemoteImage.m */; };
 		43EDD19A19C51E9C00A0EBEC /* DHLatencyTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EDD19719C51E9C00A0EBEC /* DHLatencyTester.m */; };
 		43EDD19B19C51E9C00A0EBEC /* DHLatencyTestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EDD19919C51E9C00A0EBEC /* DHLatencyTestResult.m */; };
 		43EDD19F19C52E3400A0EBEC /* DHFeedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EDD19E19C52E3400A0EBEC /* DHFeedResult.m */; };
@@ -172,8 +167,6 @@
 		431108D419C7AE6D0050174C /* DHUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHUnarchiver.m; sourceTree = "<group>"; };
 		431173DA19DA3513007E238E /* DHImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHImageCache.h; sourceTree = "<group>"; };
 		431173DB19DA3513007E238E /* DHImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHImageCache.m; sourceTree = "<group>"; };
-		432321E01AA1BBF70045BA77 /* DHRemoteBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRemoteBrowser.h; sourceTree = "<group>"; };
-		432321E11AA1BBF70045BA77 /* DHRemoteBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRemoteBrowser.m; sourceTree = "<group>"; };
 		43256F0519F7A6A8003919BA /* DHBrowserTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBrowserTableView.h; sourceTree = "<group>"; };
 		43256F0619F7A6A8003919BA /* DHBrowserTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBrowserTableView.m; sourceTree = "<group>"; };
 		43256F0819F7B4B9003919BA /* UITableView+DHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DHUtils.h"; sourceTree = "<group>"; };
@@ -201,8 +194,6 @@
 		435145961DEB7035000874A8 /* DHCheatRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCheatRepo.m; sourceTree = "<group>"; };
 		435145981DEB7099000874A8 /* DHCheatRepoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCheatRepoList.h; sourceTree = "<group>"; };
 		435145991DEB7099000874A8 /* DHCheatRepoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCheatRepoList.m; sourceTree = "<group>"; };
-		43573F761A997EC7000E6F2D /* DHRemoteServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRemoteServer.h; sourceTree = "<group>"; };
-		43573F771A997EC7000E6F2D /* DHRemoteServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRemoteServer.m; sourceTree = "<group>"; };
 		4361651B19CCF8500026F08E /* NSTimer+DHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+DHUtils.h"; sourceTree = "<group>"; };
 		4361651C19CCF8500026F08E /* NSTimer+DHUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+DHUtils.m"; sourceTree = "<group>"; };
 		436DF77E19FFA926008814F8 /* DHRepoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRepoTableView.h; sourceTree = "<group>"; };
@@ -258,8 +249,6 @@
 		43A356CA19FFCE4D0073D143 /* UIViewController+DHUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DHUtils.m"; sourceTree = "<group>"; };
 		43A6D9C719E0D69700780BC8 /* DHDocsetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDocsetManager.h; sourceTree = "<group>"; };
 		43A6D9C819E0D69700780BC8 /* DHDocsetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDocsetManager.m; sourceTree = "<group>"; };
-		43AAB7801AAE776800DB76F3 /* DHRemoteProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRemoteProtocol.h; sourceTree = "<group>"; };
-		43AAB7811AAE776800DB76F3 /* DHRemoteProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRemoteProtocol.m; sourceTree = "<group>"; };
 		43AC700019E4530400E0DB43 /* home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = home.html; sourceTree = "<group>"; };
 		43AF0E131D1861C600F0D8A0 /* DHAppleActiveLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAppleActiveLanguage.h; sourceTree = "<group>"; };
 		43AF0E141D1861CE00F0D8A0 /* DHAppleActiveLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAppleActiveLanguage.m; sourceTree = "<group>"; };
@@ -302,10 +291,6 @@
 		43DCAEB71A9C3C8500A28A95 /* NSData+DHUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DHUtils.m"; sourceTree = "<group>"; };
 		43DF51921A07B4C0006AB295 /* DHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHNavigationController.h; sourceTree = "<group>"; };
 		43DF51931A07B4C0006AB295 /* DHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHNavigationController.m; sourceTree = "<group>"; };
-		43DFED7E1A9EBEA5008F7795 /* DHRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRemote.h; sourceTree = "<group>"; };
-		43DFED7F1A9EBEA5008F7795 /* DHRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRemote.m; sourceTree = "<group>"; };
-		43DFED811A9EE104008F7795 /* DHRemoteImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRemoteImage.h; sourceTree = "<group>"; };
-		43DFED821A9EE104008F7795 /* DHRemoteImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRemoteImage.m; sourceTree = "<group>"; };
 		43EDD19619C51E9C00A0EBEC /* DHLatencyTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLatencyTester.h; sourceTree = "<group>"; };
 		43EDD19719C51E9C00A0EBEC /* DHLatencyTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLatencyTester.m; sourceTree = "<group>"; };
 		43EDD19819C51E9C00A0EBEC /* DHLatencyTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLatencyTestResult.h; sourceTree = "<group>"; };
@@ -448,15 +433,6 @@
 			name = Others;
 			sourceTree = "<group>";
 		};
-		432321DF1AA1BBE20045BA77 /* Others */ = {
-			isa = PBXGroup;
-			children = (
-				43DFED811A9EE104008F7795 /* DHRemoteImage.h */,
-				43DFED821A9EE104008F7795 /* DHRemoteImage.m */,
-			);
-			name = Others;
-			sourceTree = "<group>";
-		};
 		43280F511DDE4A4C001C2062 /* User Contributed */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,22 +525,6 @@
 				435145991DEB7099000874A8 /* DHCheatRepoList.m */,
 			);
 			name = "Cheat Sheets";
-			sourceTree = "<group>";
-		};
-		43573F751A997EB0000E6F2D /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				43573F761A997EC7000E6F2D /* DHRemoteServer.h */,
-				43573F771A997EC7000E6F2D /* DHRemoteServer.m */,
-				43DFED7E1A9EBEA5008F7795 /* DHRemote.h */,
-				43DFED7F1A9EBEA5008F7795 /* DHRemote.m */,
-				432321E01AA1BBF70045BA77 /* DHRemoteBrowser.h */,
-				432321E11AA1BBF70045BA77 /* DHRemoteBrowser.m */,
-				43AAB7801AAE776800DB76F3 /* DHRemoteProtocol.h */,
-				43AAB7811AAE776800DB76F3 /* DHRemoteProtocol.m */,
-				432321DF1AA1BBE20045BA77 /* Others */,
-			);
-			name = Remote;
 			sourceTree = "<group>";
 		};
 		436FDF5719FE57C600553931 /* Fonts */ = {
@@ -842,7 +802,6 @@
 				4341A1F319BFE6D200AD164A /* Browser */,
 				4341A1F219BFE6CA00AD164A /* Preferences */,
 				4341A1F119BFE6B500AD164A /* Repos */,
-				43573F751A997EB0000E6F2D /* Remote */,
 				43B0956619BFD16C00F8611B /* Others */,
 				438525E219C13E31002BAFD1 /* Utils */,
 				43FD2F0319BB8D87007E594D /* Images.xcassets */,
@@ -1072,10 +1031,8 @@
 				43BD6BF41DCE379B0005A1E7 /* DHAppUpdateChecker.m in Sources */,
 				439051FC19E68FE20083A55E /* NSString+GTM.m in Sources */,
 				43D4F06719E7D68100C22AF5 /* DHDBSearcher.m in Sources */,
-				43DFED831A9EE104008F7795 /* DHRemoteImage.m in Sources */,
 				43AF0E151D1861CE00F0D8A0 /* DHAppleActiveLanguage.m in Sources */,
 				43256F0719F7A6A8003919BA /* DHBrowserTableView.m in Sources */,
-				43DFED801A9EBEA5008F7795 /* DHRemote.m in Sources */,
 				4338AB601AAF70AF007B85DE /* DHWebProgressView.m in Sources */,
 				4303A3C719C6590000A7CD85 /* DHDocset.m in Sources */,
 				43256F0A19F7B4B9003919BA /* UITableView+DHUtils.m in Sources */,
@@ -1083,7 +1040,6 @@
 				43D4F06A19E7DF3900C22AF5 /* DHDBNestedResultSorter.m in Sources */,
 				437B6F8719EBC98A003023E8 /* DHCSS.m in Sources */,
 				4390520019E692D90083A55E /* DHDBResultSorter.m in Sources */,
-				432321E21AA1BBF70045BA77 /* DHRemoteBrowser.m in Sources */,
 				4303A3C119C6584F00A7CD85 /* FMDatabaseQueue.m in Sources */,
 				43FD2EF219BB8D87007E594D /* main.m in Sources */,
 				43D28EBB19F97D5500FDC5EE /* DHTocBrowser.m in Sources */,
@@ -1106,7 +1062,6 @@
 				43DF51941A07B4C0006AB295 /* DHNavigationController.m in Sources */,
 				434AB15719C2738900791E07 /* DHRepoTableViewCell.m in Sources */,
 				438525E119C129FC002BAFD1 /* DHFeed.m in Sources */,
-				43573F781A997EC7000E6F2D /* DHRemoteServer.m in Sources */,
 				43EDD19B19C51E9C00A0EBEC /* DHLatencyTestResult.m in Sources */,
 				43D4F06D19E7E88400C22AF5 /* DHDBSearchController.m in Sources */,
 				4351459A1DEB7099000874A8 /* DHCheatRepoList.m in Sources */,
@@ -1128,7 +1083,6 @@
 				43EDD19A19C51E9C00A0EBEC /* DHLatencyTester.m in Sources */,
 				431173DC19DA3513007E238E /* DHImageCache.m in Sources */,
 				43FD2EFF19BB8D87007E594D /* DHDocsetBrowser.m in Sources */,
-				43AAB7821AAE776800DB76F3 /* DHRemoteProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

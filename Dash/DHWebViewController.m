@@ -26,7 +26,6 @@
 #import "DHUnarchiver.h"
 #import "DHTocBrowser.h"
 #import "DHJavaScriptBridge.h"
-#import "DHRemoteProtocol.h"
 #import "DHTypeBrowser.h"
 #import "DHEntryBrowser.h"
 #import "DHWebView.h"
@@ -137,10 +136,6 @@ static id singleton = nil;
         if(self.result)
         {
             [self loadResult:self.result];
-            if([DHRemoteServer sharedServer].connectedRemote)
-            {
-                [[DHRemoteServer sharedServer] processRemoteTableOfContents];
-            }
         }
         else if(self.urlToLoad)
         {
@@ -164,10 +159,7 @@ static id singleton = nil;
     self.jsContext[@"window"][@"dash"] = [DHJavaScriptBridge sharedBridge];
     [super viewWillAppear:animated];
     self.ignoreScroll = YES;
-    if(![DHRemoteServer sharedServer].connectedRemote)
-    {
-        self.navigationController.toolbarHidden = NO;        
-    }
+    self.navigationController.toolbarHidden = NO;
     CGFloat progressBarHeight = 2.f;
     CGRect navigationBarBounds = self.navigationController.navigationBar.bounds;
     CGRect barFrame = CGRectMake(0, navigationBarBounds.size.height - progressBarHeight, navigationBarBounds.size.width, progressBarHeight);
@@ -237,10 +229,6 @@ static id singleton = nil;
 
 - (void)webViewDidChangeLocationWithinPage
 {
-    if(!self.nextAnchorChangeNotCausedByUserNavigation && [DHRemoteServer sharedServer].connectedRemote)
-    {
-        [[DHRemoteServer sharedServer] sendWebViewURL:[self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"]];
-    }
     self.nextAnchorChangeNotCausedByUserNavigation = NO;
 }
 
@@ -276,10 +264,6 @@ static id singleton = nil;
         [self performSelector:@selector(updateBackForwardButtonState) withObject:self afterDelay:0.1];
         return YES;
     }
-    if(navigationType == UIWebViewNavigationTypeLinkClicked || navigationType == UIWebViewNavigationTypeFormSubmitted || navigationType == UIWebViewNavigationTypeFormResubmitted)
-    {
-        [[DHRemoteServer sharedServer] sendWebViewURL:[request URL].absoluteString];
-    }
     [self performSelector:@selector(updateBackForwardButtonState) withObject:self afterDelay:0.1];
     return YES;
 }
@@ -303,7 +287,7 @@ static id singleton = nil;
 
 - (void)setUpTOC
 {
-    if([DHRemoteServer sharedServer].connectedRemote || [[self loadedURL] hasPrefix:@"dash-apple-api://"])
+    if([[self loadedURL] hasPrefix:@"dash-apple-api://"])
     {
         return;
     }
@@ -352,7 +336,6 @@ static id singleton = nil;
 
 - (void)snippetUseButtonPressed:(id)sender
 {
-    [[DHRemoteServer sharedServer] sendObject:@{@"selector": @"useSnippet"} forRequestName:@"performWebSelector" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
 }
 
 - (void)tocButtonPressed:(id)sender
@@ -442,15 +425,8 @@ static id singleton = nil;
     [self.webView stringByEvaluatingJavaScriptFromString:[[DHJavaScript sharedJavaScript] javaScriptInFile:@"on_page_load"]];
     NSString *platform = nil;
     DHDocset *docset = nil;
-    if([DHRemoteServer sharedServer].connectedRemote)
-    {
-        platform = [DHRemoteProtocol lastResponseUserInfo][@"platform"];
-    }
-    else
-    {
-        docset = [[DHDocsetManager sharedManager] docsetForDocumentationPage:self.mainFrameURL];
-        platform = docset.platform;
-    }
+    docset = [[DHDocsetManager sharedManager] docsetForDocumentationPage:self.mainFrameURL];
+    platform = docset.platform;
     if(!platform && [self.mainFrameURL contains:@"developer.apple.com"])
     {
         platform = @"osx";
@@ -526,7 +502,7 @@ static id singleton = nil;
 
 - (void)setToolbarHidden:(BOOL)hidden
 {
-    if(self.navigationController.toolbarHidden != hidden && [self isActive] && (![DHRemoteServer sharedServer].connectedRemote || hidden))
+    if(self.navigationController.toolbarHidden != hidden && [self isActive])
     {
         self.ignoreScroll = YES;
         [self.navigationController setToolbarHidden:hidden animated:YES];
@@ -615,7 +591,7 @@ static id singleton = nil;
             self.ignoreScroll = NO;
             [self removeDashClearedClass];
             self.anchorChangeInProgress = NO;
-            if(self.navigationController.toolbarHidden && ![DHRemoteServer sharedServer].connectedRemote)
+            if(self.navigationController.toolbarHidden)
             {
                 self.ignoreScroll = YES;
                 [self.navigationController setToolbarHidden:NO animated:YES];

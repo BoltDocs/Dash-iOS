@@ -18,7 +18,6 @@
 #import "DHBlockProtocol.h"
 #import "DHWebViewController.h"
 #import "DHDocsetManager.h"
-#import "DHRemoteProtocol.h"
 
 @implementation DHBlockProtocol
 
@@ -71,20 +70,10 @@
         BOOL isJSRequest = [[[url stringByDeletingPathFragment] pathExtension] rangeOfString:@"js"].location != NSNotFound;
         if(isHTTPRequest || isJSRequest)
         {
-            if([DHRemoteServer sharedServer].connectedRemote)
-            {
-                NSDictionary *userInfo = [DHRemoteProtocol lastResponseUserInfo];
-                platform = userInfo[@"platform"];
-                isJSEnabled = [userInfo[@"javaScriptEnabled"] boolValue];
-                blockOnlineResources = [userInfo[@"blocksOnline"] boolValue];
-            }
-            else
-            {
-                DHDocset *docset = [[DHDocsetManager sharedManager] docsetForDocumentationPage:mainFrameURL];
-                platform = docset.platform;
-                isJSEnabled = docset.isJavaScriptEnabled;
-                blockOnlineResources = docset.blocksOnlineResources;
-            }
+            DHDocset *docset = [[DHDocsetManager sharedManager] docsetForDocumentationPage:mainFrameURL];
+            platform = docset.platform;
+            isJSEnabled = docset.isJavaScriptEnabled;
+            blockOnlineResources = docset.blocksOnlineResources;
         }
         
         if(([mainFrameURL containsAny:@[@"SciPy.docset", @"NumPy.docset"]]) && isHTTPRequest)

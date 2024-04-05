@@ -113,10 +113,6 @@
     [webViewController.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"if(window.location.hash == \"#%@\") { window.location.hash = ''; } window.location.hash = \"#%@\"", hash, hash]];
     webViewController.anchorChangeInProgress = NO;
     webViewController.ignoreScroll = NO;
-    if([DHRemoteServer sharedServer].connectedRemote)
-    {
-        [[DHRemoteServer sharedServer] sendWebViewURL:[webViewController.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"]];        
-    }
     if(!iPad || !isRegularHorizontalClass)
     {
         [self performSelector:@selector(dismissModal:) withObject:self afterDelay:0.1f];

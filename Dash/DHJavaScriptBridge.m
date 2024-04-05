@@ -45,10 +45,6 @@
         [[NSUserDefaults standardUserDefaults] setObject:name forKey:DHActiveAppleLanguageKey];
         [[DHCSS sharedCSS] refreshActiveCSS];
         [[DHWebViewController sharedWebViewController] reload];
-        if([DHRemoteServer sharedServer].connectedRemote)
-        {
-            [[DHRemoteServer sharedServer] sendObject:@{@"language": name} forRequestName:@"syncAppleLanguage" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
-        }
     }
 }
 
@@ -62,10 +58,6 @@
     else if([text contains:@"Objective-C"] || [text contains:@"ObjC"])
     {
         [DHAppleActiveLanguage setLanguage:DHNewActiveAppleLanguageObjC];
-    }
-    if([DHRemoteServer sharedServer].connectedRemote)
-    {
-        [[DHRemoteServer sharedServer] sendObject:@{@"language": @([DHAppleActiveLanguage currentLanguage])} forRequestName:@"syncNewAppleLanguage" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
     }
 }
 
@@ -96,27 +88,27 @@
 
 - (void)showFallbackExplanation
 {
-    [[DHRemoteServer sharedServer] sendObject:@{@"selector": @"showFallbackExplanation", @"shouldShowWindow": @YES} forRequestName:@"performWebSelector" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
+
 }
 
 - (void)loadFallbackURL_:(JSValue *)suppressButtonChecked
 {
-    [[DHRemoteServer sharedServer] sendObject:@{@"selector": @"loadFallbackURL:", @"arg": @([suppressButtonChecked toBool])} forRequestName:@"performWebSelector" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
+
 }
 
 - (void)openDownloads
 {
-    [[DHRemoteServer sharedServer] sendObject:@{@"selector": @"openDownloads"} forRequestName:@"performWebSelector" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
+
 }
 
 - (void)openDocsets
 {
-    [[DHRemoteServer sharedServer] sendObject:@{@"selector": @"openDocsets"} forRequestName:@"performWebSelector" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
+
 }
 
 - (void)openProfiles
 {
-    [[DHRemoteServer sharedServer] sendObject:@{@"selector": @"openProfiles", @"shouldShowWindow": @YES} forRequestName:@"performWebSelector" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
+
 }
 
 - (void)openGuide

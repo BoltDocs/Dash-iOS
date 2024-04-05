@@ -28,8 +28,6 @@
 #import "DHWebViewController.h"
 #import "DHAppUpdateChecker.h"
 #import "DHDocsetBrowser.h"
-#import "DHRemoteServer.h"
-#import "DHRemoteProtocol.h"
 
 @implementation DHAppDelegate
 
@@ -68,7 +66,6 @@
     [NSURLCache setSharedURLCache:sharedCache];
     [NSURLProtocol registerClass:[DHTarixProtocol class]];
     [NSURLProtocol registerClass:[DHAppleAPIProtocol class]];
-    [NSURLProtocol registerClass:[DHRemoteProtocol class]];
     [NSURLProtocol registerClass:[DHBlockProtocol class]];
     [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"]]];
     [DHDocset stepLock];
@@ -81,7 +78,6 @@
     [DHDocsetTransferrer sharedTransferrer];
     [DHUserRepo sharedUserRepo];
     [DHCheatRepo sharedCheatRepo];
-    [DHRemoteServer sharedServer];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clipboardChanged:) name:UIPasteboardChangedNotification object:nil];
     return YES;
 }
@@ -224,14 +220,7 @@
 
 - (void)clipboardChanged:(NSNotification*)notification
 {
-    NSString *string = [UIPasteboard generalPasteboard].string;
-    if(string && string.length && [DHRemoteServer sharedServer].connectedRemote)
-    {
-        self.clipboardChangedTimer = [self.clipboardChangedTimer invalidateTimer];
-        self.clipboardChangedTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 block:^{
-            [[DHRemoteServer sharedServer] sendObject:@{@"string": string} forRequestName:@"syncClipboard" encrypted:YES toMacName:[DHRemoteServer sharedServer].connectedRemote.name];
-        } repeats:NO];
-    }
+
 }
 
 - (void)checkCommitHashes

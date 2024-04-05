@@ -142,14 +142,6 @@
         [[DHWebViewController sharedWebViewController] loadResult:result];
         [self performSegueWithIdentifier:@"DHSearchWebViewSegue" sender:self];
     }
-    if(result.isRemote)
-    {
-        NSString *remoteName = [DHRemoteServer sharedServer].connectedRemote.name;
-        if(remoteName)
-        {
-            [[DHRemoteServer sharedServer] sendObject:@{@"selectedNestedRow": @(tableView.indexPathForSelectedRow.row), @"selectedRowName": (self.result.name) ? : @"justsendtheresults"} forRequestName:@"syncNestedSelectedRow" encrypted:YES toMacName:remoteName];
-        }
-    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

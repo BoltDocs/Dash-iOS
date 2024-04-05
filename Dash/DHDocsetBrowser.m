@@ -23,7 +23,6 @@
 #import "DHDocsetManager.h"
 #import "DHAppDelegate.h"
 #import "DHDocsetDownloader.h"
-#import "DHRemoteBrowser.h"
 #import "DHWebView.h"
 #import "DHDocsetBrowserViewModel.h"
 
@@ -53,7 +52,6 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     [self.tableView registerNib:[UINib nibWithNibName:@"DHBrowserCell" bundle:nil] forCellReuseIdentifier:@"DHBrowserCell"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:DHDocsetsChangedNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:DHRemotesChangedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:DHSettingsChangedNotification object:nil];
     self.tableView.rowHeight = 44;
     self.navigationController.delegate = self;
@@ -91,20 +89,6 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
         [self.tableView deselectAll:YES];        
     }
     [self.searchController viewWillAppear];
-    if([DHRemoteServer sharedServer].connectedRemote)
-    {
-        [UIApplication sharedApplication].idleTimerDisabled = NO;
-        [[DHRemoteServer sharedServer].connectedRemote disconnect];
-        if(isRegularHorizontalClass)
-        {
-            DHWebViewController *webViewController = [DHWebViewController sharedWebViewController];
-            [webViewController loadURL:[[NSBundle mainBundle] pathForResource:@"home" ofType:@"html"]];
-            [(DHWebView*)webViewController.webView resetHistory];
-            [webViewController updateBackForwardButtonState];
-            webViewController.webView.scrollView.delegate = webViewController;
-            webViewController.navigationController.toolbarHidden = NO;
-        }
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -288,14 +272,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
 
 - (void)updateTitle
 {
-    if([DHRemoteServer sharedServer].remotes.count && !self.isEditing)
-    {
-        self.navigationItem.title = (self.sections.count > 1 || [DHDocsetManager sharedManager].docsets.count) ? @"Docsets & Remotes" : @"Remotes";
-    }
-    else
-    {
-        self.navigationItem.title = @"Docsets";
-    }
+    self.navigationItem.title = @"Docsets";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -307,7 +284,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
 {
     if(self.isEditing)
     {
-        return ([DHRemoteServer sharedServer].remotes.count) ? @"Docsets" : nil;
+        return nil;
     }
     if(self.sections.count > 1 || ([DHDocsetManager sharedManager].docsets.count && !self.shownDocsets.count))
     {
@@ -323,7 +300,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     DHDocset *docset = self.sections[indexPath.section][indexPath.row];
     cell.textLabel.text = docset.name;
     cell.detailTextLabel.text = @"";
-    [cell.titleLabel setSubtitle:([docset isKindOfClass:[DHRemote class]]) ? @"Not Connected" : @""];
+    [cell.titleLabel setSubtitle:@""];
     cell.imageView.image = docset.icon;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
@@ -357,14 +334,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
         [[DHDocsetManager sharedManager] saveDefaults];
         return;
     }
-    if([self.sections[indexPath.section][indexPath.row] isKindOfClass:[DHRemote class]])
-    {
-        [self performSegueWithIdentifier:@"DHRemoteBrowserSegue" sender:self];
-    }
-    else
-    {
-        [self performSegueWithIdentifier:@"DHTypeBrowserSegue" sender:self];
-    }
+    [self performSegueWithIdentifier:@"DHTypeBrowserSegue" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -379,8 +349,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
 
 - (void)tableViewDidBeginEditing:(UITableView *)tableView
 {
-    BOOL remotesWereShown = [DHRemoteServer sharedServer].remotes.count > 0;
-    BOOL docsetsWereShown = (!remotesWereShown && self.sections.count) || (remotesWereShown && self.sections.count > 1);
+    BOOL docsetsWereShown = self.sections.count;
     if(docsetsWereShown)
     {
         [self.tableView selectRowsInIndexSet:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [self.tableView numberOfRowsInSection:self.sections.count-1])] inSection:self.sections.count-1 animated:NO scrollPosition:UITableViewScrollPositionNone];
@@ -408,10 +377,6 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     {
         [self.tableView insertRowsAtIndexPaths:toInsert withRowAnimation:UITableViewRowAnimationFade];
     }
-    if(remotesWereShown)
-    {
-        [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    }
     [self.tableView endUpdates];
     [self.tableView reloadEmptyDataSet];
     self.tableView.tableFooterView = (self.sections.count) ? nil : [UIView new];
@@ -434,21 +399,9 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
             docsetsShouldBeShown = YES;
         }
     }
-    BOOL remotesShouldBeShown = [DHRemoteServer sharedServer].remotes.count > 0;
     [self updateSections:YES];
     [self.tableView beginUpdates];
-    if(docsetsShouldBeShown)
-    {
-        [self.tableView deleteRowsAtIndexPaths:toDelete withRowAnimation:UITableViewRowAnimationFade];
-    }
-    else
-    {
-        [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    }
-    if(remotesShouldBeShown)
-    {
-        [self.tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    }
+    [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
     [self.tableView reloadEmptyDataSet];
     self.tableView.tableFooterView = (self.sections.count) ? nil : [UIView new];
@@ -461,19 +414,6 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
         [self reload:nil];
     }
     self.isSearching = YES;
-    BOOL remotesWereShown = [DHRemoteServer sharedServer].remotes.count > 0;
-    if(remotesWereShown)
-    {
-        [self updateSections:YES];
-        [self.tableView beginUpdates];
-        if(remotesWereShown)
-        {
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-        }
-        [self.tableView endUpdates];
-        [self.tableView reloadEmptyDataSet];
-        self.tableView.tableFooterView = (self.sections.count) ? nil : [UIView new];
-    }
 }
 
 - (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
@@ -484,22 +424,6 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
         self.viewModel.keyDocsets = nil;
         self.needsToReloadWhenDoneSearching = NO;
         [self reload:nil];
-    }
-    else
-    {
-        BOOL remotesShouldBeShown = [DHRemoteServer sharedServer].remotes.count > 0;
-        if(remotesShouldBeShown)
-        {
-            [self updateSections:YES];
-            [self.tableView beginUpdates];
-            if(remotesShouldBeShown)
-            {
-                [self.tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-            }
-            [self.tableView endUpdates];
-            [self.tableView reloadEmptyDataSet];
-            self.tableView.tableFooterView = (self.sections.count) ? nil : [UIView new];
-        }
     }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self updateTitle];
@@ -524,18 +448,6 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
         DHDocset *selectedDocset = self.sections[indexPath.section][indexPath.row];
         id typeBrowser = [segue destinationViewController];
         [typeBrowser setDocset:selectedDocset];
-    }
-    else if([[segue identifier] isEqualToString:@"DHRemoteBrowserSegue"])
-    {
-        if(isRegularHorizontalClass)
-        {
-            [(DHWebView*)[DHWebViewController sharedWebViewController].webView resetHistory];
-        }
-        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-        DHRemote *selectedRemote = self.sections[indexPath.section][indexPath.row];
-        id remoteBrowser = [segue destinationViewController];
-        [remoteBrowser setRemote:selectedRemote];
-        [selectedRemote connect];
     }
     else
     {

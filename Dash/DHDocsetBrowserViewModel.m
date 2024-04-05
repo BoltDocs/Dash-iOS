@@ -33,13 +33,6 @@
 - (void)updateSectionsForEditing:(BOOL)editing andSearching:(BOOL)searching
 {
     NSMutableArray *sections = [NSMutableArray array];
-    if([DHRemoteServer sharedServer].remotes.count)
-    {
-        if(!editing && !searching)
-        {
-            [sections addObject:[self sort:DHRemoteServer.sharedServer.remotes]];
-        }
-    }
     NSArray<DHDocset *> *docsets = [self docsetsForEditing:editing];
     self.shownDocsets = docsets;
     if(docsets.count)
