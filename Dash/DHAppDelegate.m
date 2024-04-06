@@ -26,7 +26,6 @@
 #import "DHAppleAPIProtocol.h"
 #import "DHCSS.h"
 #import "DHWebViewController.h"
-#import "DHAppUpdateChecker.h"
 #import "DHDocsetBrowser.h"
 
 @implementation DHAppDelegate
@@ -155,19 +154,15 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    if(![[DHAppUpdateChecker sharedUpdateChecker] alertIfUpdatesAreScheduled])
+    if(![[DHDocsetDownloader sharedDownloader] alertIfUpdatesAreScheduled])
     {
-        [[DHAppUpdateChecker sharedUpdateChecker] backgroundCheckForUpdatesIfNeeded];
-        if(![[DHDocsetDownloader sharedDownloader] alertIfUpdatesAreScheduled])
+        [[DHDocsetDownloader sharedDownloader] backgroundCheckForUpdatesIfNeeded];
+        if(![[DHUserRepo sharedUserRepo] alertIfUpdatesAreScheduled])
         {
-            [[DHDocsetDownloader sharedDownloader] backgroundCheckForUpdatesIfNeeded];
-            if(![[DHUserRepo sharedUserRepo] alertIfUpdatesAreScheduled])
+            [[DHUserRepo sharedUserRepo] backgroundCheckForUpdatesIfNeeded];
+            if(![[DHCheatRepo sharedCheatRepo] alertIfUpdatesAreScheduled])
             {
-                [[DHUserRepo sharedUserRepo] backgroundCheckForUpdatesIfNeeded];
-                if(![[DHCheatRepo sharedCheatRepo] alertIfUpdatesAreScheduled])
-                {
-                    [[DHCheatRepo sharedCheatRepo] backgroundCheckForUpdatesIfNeeded];
-                }
+                [[DHCheatRepo sharedCheatRepo] backgroundCheckForUpdatesIfNeeded];
             }
         }
     }
