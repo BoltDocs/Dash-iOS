@@ -18,6 +18,8 @@
 #import <Foundation/Foundation.h>
 #import "DHFileDownload.h"
 
+@class DHFeed;
+
 @interface DHFeedResult : NSObject
 
 @property (strong) NSArray *downloadURLs;
@@ -25,7 +27,7 @@
 @property (assign) NSUInteger expectedContentLength;
 @property (assign) NSUInteger receivedContentLength;
 @property (strong) DHFileDownload *fileDownload;
-@property (weak) id feed;
+@property (weak) DHFeed *feed;
 @property (strong) NSDate *lastDownloadProgressUpdate;
 @property (assign) double lastProgress;
 @property (assign, nonatomic) BOOL hasTarix;
