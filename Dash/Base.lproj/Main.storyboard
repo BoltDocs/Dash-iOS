@@ -321,14 +321,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" restorationIdentifier="DocsetsSearchBar" id="VJZ-Lp-FAA">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            <connections>
-                                <outlet property="delegate" destination="7bK-jq-Zjz" id="dJ4-gv-uRt"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BLABLA" id="H2Y-Rn-XFZ">
                                 <rect key="frame" x="0.0" y="66" width="414" height="44"/>
@@ -353,7 +345,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchDisplayController" destination="4Nc-re-3YX" id="d5C-Zk-9Cy"/>
                         <segue destination="LN4-2N-5f1" kind="show" identifier="DHOpenSettingsSegue" id="4LN-qs-RRA"/>
                         <segue destination="bVq-xA-3wd" kind="push" identifier="DHDocsetDownloaderToDetailSegue" splitViewControllerTargetIndex="1" id="BAb-G2-tNG"/>
                         <segue destination="MG8-DW-Fv2" kind="show" identifier="DHTypeBrowserSegue" id="Ocj-J9-g6q"/>
@@ -362,15 +353,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="4Nc-re-3YX" customClass="DHSearchDisplayController">
-                    <connections>
-                        <outlet property="delegate" destination="7bK-jq-Zjz" id="t43-uI-qHE"/>
-                        <outlet property="searchBar" destination="VJZ-Lp-FAA" id="sUn-GY-TJA"/>
-                        <outlet property="searchContentsController" destination="7bK-jq-Zjz" id="FYG-uq-SSP"/>
-                        <outlet property="searchResultsDataSource" destination="7bK-jq-Zjz" id="58Z-1R-yn6"/>
-                        <outlet property="searchResultsDelegate" destination="7bK-jq-Zjz" id="Yap-xw-oMZ"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="918" y="-545"/>
         </scene>
@@ -382,14 +364,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="VJR-eZ-B8V">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            <connections>
-                                <outlet property="delegate" destination="MG8-DW-Fv2" id="4dd-ej-3oY"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BLABLA" id="VA8-am-q6Z">
                                 <rect key="frame" x="0.0" y="66" width="414" height="44"/>
@@ -407,7 +381,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Types" id="1DN-dq-KAm"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="QXT-TT-18q" id="Ffp-2g-pgc"/>
                         <segue destination="9Rs-Yt-R1b" kind="show" identifier="DHEntryBrowserSegue" id="FUX-Tg-BvC"/>
                         <segue destination="On6-fK-Wo0" kind="show" identifier="DHNestedSegue" id="ljv-Qq-slv"/>
                         <segue destination="JEX-9P-axG" kind="push" identifier="DHSearchWebViewSegue" id="l26-aC-Nx3"/>
@@ -415,15 +388,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8s-68-JtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="QXT-TT-18q" customClass="DHSearchDisplayController">
-                    <connections>
-                        <outlet property="delegate" destination="MG8-DW-Fv2" id="NhR-F4-gaX"/>
-                        <outlet property="searchBar" destination="VJR-eZ-B8V" id="ZoK-EI-6Xc"/>
-                        <outlet property="searchContentsController" destination="MG8-DW-Fv2" id="59w-BX-ea7"/>
-                        <outlet property="searchResultsDataSource" destination="MG8-DW-Fv2" id="SJ6-b1-uYr"/>
-                        <outlet property="searchResultsDelegate" destination="MG8-DW-Fv2" id="kPV-0H-TmG"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1743" y="-451"/>
         </scene>
@@ -435,14 +399,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" restorationIdentifier="EntriesSearchBar" id="ar1-R2-LNh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            <connections>
-                                <outlet property="delegate" destination="9Rs-Yt-R1b" id="dCU-Oq-KCt"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BLABLA" id="gr3-qP-hfk">
                                 <rect key="frame" x="0.0" y="66" width="414" height="44"/>
@@ -460,22 +416,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Entries" id="Un0-xc-bRD"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="zcF-qB-4QT" id="cms-mv-pRf"/>
                         <segue destination="On6-fK-Wo0" kind="show" identifier="DHNestedSegue" id="y34-0z-6ul"/>
                         <segue destination="JEX-9P-axG" kind="push" identifier="DHSearchWebViewSegue" id="hEp-xK-Brz"/>
                         <segue destination="JEX-9P-axG" kind="push" identifier="DHWebViewSegue" id="Vt3-tf-TGA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwV-Su-f2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="zcF-qB-4QT" customClass="DHSearchDisplayController">
-                    <connections>
-                        <outlet property="delegate" destination="9Rs-Yt-R1b" id="PES-ZY-NqP"/>
-                        <outlet property="searchBar" destination="ar1-R2-LNh" id="Yvm-7w-6oa"/>
-                        <outlet property="searchContentsController" destination="9Rs-Yt-R1b" id="8Ws-Jg-PC2"/>
-                        <outlet property="searchResultsDataSource" destination="9Rs-Yt-R1b" id="eHe-KB-xvu"/>
-                        <outlet property="searchResultsDelegate" destination="9Rs-Yt-R1b" id="jRI-Em-gu9"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2556" y="-470"/>
         </scene>
@@ -581,15 +527,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Lzc-4G-LSC">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            <connections>
-                                <outlet property="delegate" destination="Wkz-GU-NNB" id="08o-8I-7Be"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BLABLA" id="uat-DW-uld">
                                 <rect key="frame" x="0.0" y="66" width="414" height="44"/>
@@ -614,21 +551,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="searchBar" destination="Lzc-4G-LSC" id="kW7-uu-5Rf"/>
-                        <outlet property="searchDisplayController" destination="QXT-TT-18q" id="hDw-2l-hBA"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fg-gS-VxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="8u3-sF-Owm" customClass="DHSearchDisplayController">
-                    <connections>
-                        <outlet property="delegate" destination="Wkz-GU-NNB" id="kvD-zX-wpP"/>
-                        <outlet property="searchBar" destination="Lzc-4G-LSC" id="fNw-gA-Vhh"/>
-                        <outlet property="searchContentsController" destination="Wkz-GU-NNB" id="8fa-tp-JZ0"/>
-                        <outlet property="searchResultsDataSource" destination="Wkz-GU-NNB" id="ga5-o2-6Ts"/>
-                        <outlet property="searchResultsDelegate" destination="Wkz-GU-NNB" id="M5n-z4-w4w"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1999" y="1202"/>
         </scene>

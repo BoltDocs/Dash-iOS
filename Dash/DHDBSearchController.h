@@ -17,15 +17,16 @@
 
 #import <Foundation/Foundation.h>
 #import "DHDBSearcher.h"
+#import "DHSearchResultsController.h"
 
-@interface DHDBSearchController : NSObject <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, DHDBSearcherDelegate>
+@interface DHDBSearchController : NSObject <UISearchControllerDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, DHDBSearcherDelegate, DHSearchResultsControllerDelegate>
 
 @property (assign) BOOL loading;
 @property (retain) NSArray *docsets;
 @property (retain) NSString *typeLimit;
 @property (retain) NSMutableArray *results;
 @property (retain) NSMutableArray *nextResults;
-@property (weak) UISearchDisplayController *displayController;
+@property (weak) UISearchController *searchController;
 @property (weak) UIViewController *viewController;
 @property (retain) DHDBSearcher *searcher;
 @property (retain) NSString *viewControllerTitle;
@@ -37,7 +38,7 @@
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection;
-- (void)hookToSearchDisplayController:(UISearchDisplayController *)displayController;
+- (void)hookToSearchController:(UISearchController *)searchController;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder;
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder;

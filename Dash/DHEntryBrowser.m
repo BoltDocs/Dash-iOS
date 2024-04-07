@@ -31,7 +31,7 @@
     }
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
-    self.searchController = [DHDBSearchController searchControllerWithDocsets:@[self.docset] typeLimit:self.type viewController:self];
+    self.dbSearchController = [DHDBSearchController searchControllerWithDocsets:@[self.docset] typeLimit:self.type viewController:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareForURLSearch:) name:DHPrepareForURLSearch object:nil];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"DHBrowserCell" bundle:nil] forCellReuseIdentifier:@"DHBrowserCell"];
@@ -96,7 +96,7 @@
         });
     }
     [self.tableView deselectAll:YES];
-    [self.searchController viewWillAppear];
+    [self.dbSearchController viewWillAppear];
 }
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
@@ -106,25 +106,25 @@
         [super traitCollectionDidChange:previousTraitCollection];
     }
     [self.tableView reloadData];
-    [self.searchController traitCollectionDidChange:previousTraitCollection];
+    [self.dbSearchController traitCollectionDidChange:previousTraitCollection];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.searchController viewWillDisappear];
+    [self.dbSearchController viewWillDisappear];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self.searchController viewDidDisappear];
+    [self.dbSearchController viewDidDisappear];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.searchController viewDidAppear];
+    [self.dbSearchController viewDidAppear];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -196,13 +196,13 @@
     }
     else
     {
-        [self.searchController prepareForSegue:segue sender:sender];
+        [self.dbSearchController prepareForSegue:segue sender:sender];
     }
 }
 
 - (void)prepareForURLSearch:(id)sender
 {
-    [self.searchDisplayController setActive:NO animated:NO];
+    [self.dbSearchController.searchController setActive:NO];
 }
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
@@ -216,7 +216,7 @@
     {
         [coder encodeObject:selectedIndexPath forKey:@"selectedIndexPath"];
     }
-    [self.searchController encodeRestorableStateWithCoder:coder];
+    [self.dbSearchController encodeRestorableStateWithCoder:coder];
     [super encodeRestorableStateWithCoder:coder];
 }
 
@@ -246,7 +246,7 @@
             [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
         });
     }
-    [self.searchController decodeRestorableStateWithCoder:coder];
+    [self.dbSearchController decodeRestorableStateWithCoder:coder];
     [super decodeRestorableStateWithCoder:coder];
 }
 

@@ -120,7 +120,7 @@
             if ([searchController respondsToSelector:@selector(searchBar)]) {
                 return [[controller searchController] searchBar];
             } else {
-                return [[[(DHDocsetBrowser*)controller searchController] displayController] searchBar];
+                return [[[(DHDocsetBrowser*)controller dbSearchController] searchController] searchBar];
             }
         }
     }

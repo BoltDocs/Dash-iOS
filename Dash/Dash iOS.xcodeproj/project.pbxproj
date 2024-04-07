@@ -106,7 +106,6 @@
 		43F70AC019CBBD20000849C8 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43F70ABF19CBBD20000849C8 /* Defaults.plist */; };
 		43F7527319CD1C2000D76F58 /* UIButton+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7527219CD1C2000D76F58 /* UIButton+DHUtils.m */; };
 		43F7527519CD31D100D76F58 /* DHRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F7527419CD31D100D76F58 /* DHRepoCell.xib */; };
-		43F760B219EA61B5002BD8A6 /* DHSearchDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F760B119EA61B5002BD8A6 /* DHSearchDisplayController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		43F84A7619EEBD1A008FE85C /* DHTarixIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F84A7519EEBD1A008FE85C /* DHTarixIndex.m */; };
 		43FC34041DE784C40089F134 /* DHUserRepoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FC34011DE784C40089F134 /* DHUserRepoList.m */; };
 		43FD2EE619BB8D87007E594D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FD2EE519BB8D87007E594D /* Foundation.framework */; };
@@ -282,7 +281,7 @@
 		43D4F06819E7DF3900C22AF5 /* DHDBNestedResultSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDBNestedResultSorter.h; sourceTree = "<group>"; };
 		43D4F06919E7DF3900C22AF5 /* DHDBNestedResultSorter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDBNestedResultSorter.m; sourceTree = "<group>"; };
 		43D4F06B19E7E88400C22AF5 /* DHDBSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDBSearchController.h; sourceTree = "<group>"; };
-		43D4F06C19E7E88400C22AF5 /* DHDBSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDBSearchController.m; sourceTree = "<group>"; };
+		43D4F06C19E7E88400C22AF5 /* DHDBSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = DHDBSearchController.m; sourceTree = "<group>"; tabWidth = 4; };
 		43D7E4EE1BB4C62E00FC1DEF /* DHWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHWindow.h; sourceTree = "<group>"; };
 		43D7E4EF1BB4C62E00FC1DEF /* DHWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHWindow.m; sourceTree = "<group>"; };
 		43DCAEB61A9C3C8500A28A95 /* NSData+DHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DHUtils.h"; sourceTree = "<group>"; };
@@ -305,8 +304,6 @@
 		43F7527119CD1C2000D76F58 /* UIButton+DHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+DHUtils.h"; sourceTree = "<group>"; };
 		43F7527219CD1C2000D76F58 /* UIButton+DHUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+DHUtils.m"; sourceTree = "<group>"; };
 		43F7527419CD31D100D76F58 /* DHRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHRepoCell.xib; sourceTree = "<group>"; };
-		43F760B019EA61B5002BD8A6 /* DHSearchDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSearchDisplayController.h; sourceTree = "<group>"; };
-		43F760B119EA61B5002BD8A6 /* DHSearchDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSearchDisplayController.m; sourceTree = "<group>"; };
 		43F84A7419EEBD1A008FE85C /* DHTarixIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTarixIndex.h; sourceTree = "<group>"; };
 		43F84A7519EEBD1A008FE85C /* DHTarixIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTarixIndex.m; sourceTree = "<group>"; };
 		43FC34001DE784C40089F134 /* DHUserRepoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHUserRepoList.h; sourceTree = "<group>"; };
@@ -648,8 +645,6 @@
 				439051FF19E692D90083A55E /* DHDBResultSorter.m */,
 				43D4F06819E7DF3900C22AF5 /* DHDBNestedResultSorter.h */,
 				43D4F06919E7DF3900C22AF5 /* DHDBNestedResultSorter.m */,
-				43F760B019EA61B5002BD8A6 /* DHSearchDisplayController.h */,
-				43F760B119EA61B5002BD8A6 /* DHSearchDisplayController.m */,
 				43AF0E131D1861C600F0D8A0 /* DHAppleActiveLanguage.h */,
 				43AF0E141D1861CE00F0D8A0 /* DHAppleActiveLanguage.m */,
 				6BC7E1932BC274B500FF6619 /* DHSearchResultsController.h */,
@@ -1039,7 +1034,6 @@
 				4303A3D419C668C200A7CD85 /* DHTypes.m in Sources */,
 				4303A3C019C6584F00A7CD85 /* FMDatabasePool.m in Sources */,
 				4341A1F619BFE89A00AD164A /* DHDocsetTransferrer.m in Sources */,
-				43F760B219EA61B5002BD8A6 /* DHSearchDisplayController.m in Sources */,
 				43DF51941A07B4C0006AB295 /* DHNavigationController.m in Sources */,
 				434AB15719C2738900791E07 /* DHRepoTableViewCell.m in Sources */,
 				438525E119C129FC002BAFD1 /* DHFeed.m in Sources */,

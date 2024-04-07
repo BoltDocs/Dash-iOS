@@ -47,7 +47,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     [super viewDidLoad];
     self.viewModel = [[DHDocsetBrowserViewModel alloc] init];
     self.clearsSelectionOnViewWillAppear = NO;
-    self.searchController = [DHDBSearchController searchControllerWithDocsets:nil typeLimit:nil viewController:self];
+    self.dbSearchController = [DHDBSearchController searchControllerWithDocsets:nil typeLimit:nil viewController:self];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"DHBrowserCell" bundle:nil] forCellReuseIdentifier:@"DHBrowserCell"];
     
@@ -70,14 +70,14 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
         self.didFirstReload = YES;
         [self reload:nil];
     }
-    [self.searchController viewDidAppear];
+    [self.dbSearchController viewDidAppear];
     [self grabTitleBarItemAttributedStringTemplate];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self.searchController viewDidDisappear];
+    [self.dbSearchController viewDidDisappear];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,13 +88,13 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     {
         [self.tableView deselectAll:YES];        
     }
-    [self.searchController viewWillAppear];
+    [self.dbSearchController viewWillAppear];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.searchController viewWillDisappear];
+    [self.dbSearchController viewWillDisappear];
 }
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
@@ -103,7 +103,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     {
         [super traitCollectionDidChange:previousTraitCollection];
     }
-    [self.searchController traitCollectionDidChange:previousTraitCollection];
+    [self.dbSearchController traitCollectionDidChange:previousTraitCollection];
 }
 
 - (void)performURLSearch:(NSNotification *)notification
@@ -170,9 +170,9 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
         }
     }
     query = [[query stringByReplacingPercentEscapes] trimWhitespace];
-    self.searchDisplayController.searchBar.text = @"";
-    [self.searchDisplayController setActive:NO animated:NO];
-    [self.searchDisplayController.searchBar resignFirstResponder];
+    self.dbSearchController.searchController.searchBar.text = @"";
+    [self.dbSearchController.searchController setActive:NO];
+    [self.dbSearchController.searchController.searchBar resignFirstResponder];
     if((query && query.length) || keywordDocsets.count)
     {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.00 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -180,11 +180,11 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
             {
                 self.viewModel.keyDocsets = [NSMutableArray arrayWithArray:[keywordDocsets array]];
             }
-            [self.searchDisplayController setActive:YES animated:NO];
-            self.searchDisplayController.searchBar.text = query;
+            [self.dbSearchController.searchController setActive:YES];
+            self.dbSearchController.searchController.searchBar.text = query;
             if(!query.length)
             {
-                [self.searchDisplayController.searchBar becomeFirstResponder];
+                [self.dbSearchController.searchController.searchBar becomeFirstResponder];
             }
         });
     }
@@ -407,7 +407,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     self.tableView.tableFooterView = (self.sections.count) ? nil : [UIView new];
 }
 
-- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
+- (void)willPresentSearchController:(UISearchController *)controller
 {
     if(self.viewModel.keyDocsets)
     {
@@ -416,7 +416,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     self.isSearching = YES;
 }
 
-- (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
+- (void)willDismissSearchController:(UISearchController *)controller
 {
     self.isSearching = NO;
     if(self.needsToReloadWhenDoneSearching || self.viewModel.keyDocsets)
@@ -430,7 +430,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     });
 }
 
-- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+- (void)didDismissSearchController:(UISearchController *)controller
 {
     [self updateTitle];
 }
@@ -451,7 +451,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
     }
     else
     {
-        [self.searchController prepareForSegue:segue sender:sender];
+        [self.dbSearchController prepareForSegue:segue sender:sender];
     }
 }
 
@@ -488,7 +488,7 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
 {
     if(self.navigationController.viewControllers.count > 1)
     {
-        if([self.navigationController.visibleViewController respondsToSelector:@selector(searchController)] && [[(DHDocsetBrowser*)self.navigationController.visibleViewController searchController] isKindOfClass:[DHDBSearchController class]] && [(DHDocsetBrowser*)self.navigationController.visibleViewController searchController].displayController.active)
+        if([self.navigationController.visibleViewController respondsToSelector:@selector(searchController)] && [[(DHDocsetBrowser*)self.navigationController.visibleViewController dbSearchController] isKindOfClass:[DHDBSearchController class]] && [(DHDocsetBrowser*)self.navigationController.visibleViewController dbSearchController].searchController.active)
         {
             return NO;
         }
@@ -513,14 +513,14 @@ static NSAttributedString *_titleBarItemAttributedStringTemplate = nil;
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
-    [self.searchController encodeRestorableStateWithCoder:coder];
+    [self.dbSearchController encodeRestorableStateWithCoder:coder];
     [super encodeRestorableStateWithCoder:coder];
 }
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
 {
     [super decodeRestorableStateWithCoder:coder];
-    [self.searchController decodeRestorableStateWithCoder:coder];
+    [self.dbSearchController decodeRestorableStateWithCoder:coder];
 }
 
 - (void)applicationFinishedRestoringState

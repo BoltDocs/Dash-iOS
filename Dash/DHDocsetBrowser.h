@@ -24,7 +24,7 @@
 @interface DHDocsetBrowser : UITableViewController <UINavigationControllerDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, DHBrowserTableViewDelegate>
 
 @property (assign) BOOL didFirstReload;
-@property (strong) DHDBSearchController *searchController;
+@property (strong) DHDBSearchController *dbSearchController;
 @property (strong, readonly) NSArray<DHDocset *> *shownDocsets;
 @property (assign) BOOL didLoad;
 @property (assign) BOOL isSearching;

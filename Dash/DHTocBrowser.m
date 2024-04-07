@@ -36,6 +36,22 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"DHBrowserCell" bundle:nil] forCellReuseIdentifier:@"DHBrowserCell"];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, DHHeaderSeparatorInset, 0, 0);
     self.tableView.rowHeight = 44;
+    
+    DHSearchResultsController *searchResultsController = [[DHSearchResultsController alloc] init];
+    searchResultsController.delegate = self;
+    
+    UITableView *searchResultsTableView = searchResultsController.searchResultsTableView;
+    searchResultsTableView.delegate = self;
+    searchResultsTableView.dataSource = self;
+
+    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
+    searchController.delegate = self;
+    searchController.searchResultsUpdater = self;
+    searchController.hidesNavigationBarDuringPresentation = NO;
+
+    self.navigationItem.searchController = searchController;
+    
+    self.searchController = searchController;
 }
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
@@ -144,16 +160,8 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
+- (void)searchResultsController:(DHSearchResultsController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
 {
-    self.searchController = controller;
-    if(isIOS11)
-    {
-        if(@available(iOS 11.0, *))
-        {
-            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }
-    }
     tableView.rowHeight = 44;
     tableView.separatorInset = UIEdgeInsetsMake(0, DHHeaderSeparatorInset, 0, 0);
     if(iPad && isRegularHorizontalClass)
@@ -163,8 +171,9 @@
     [tableView registerNib:[UINib nibWithNibName:@"DHBrowserCell" bundle:nil] forCellReuseIdentifier:@"DHBrowserCell"];
 }
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+- (void)updateSearchResultsForSearchController:(UISearchController *)controller
 {
+    NSString *searchString = controller.searchBar.text;
     self.filteredSections = [NSMutableArray array];
     self.filteredSectionTitles = [NSMutableArray array];
     int i = 0;
@@ -185,10 +194,11 @@
         }
         ++i;
     }
-    return YES;
+    DHSearchResultsController *searchResultsController = (DHSearchResultsController *)controller.searchResultsController;
+    [searchResultsController.searchResultsTableView reloadData];
 }
 
-- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
+- (void)willPresentSearchController:(UISearchController *)controller
 {
     [self.tableView deselectAll:NO];
 }
@@ -200,14 +210,17 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.activeSectionTitles[section];
+    if (section < self.activeSectionTitles.count) {
+        return self.activeSectionTitles[section];
+    }
+    return nil;
 }
 
 - (void)prepareForURLSearch:(id)sender
 {
     if(!iPad || !isRegularHorizontalClass)
     {
-        [self.searchDisplayController setActive:NO animated:NO];
+        [self.searchController setActive:NO];
         [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];        
     }
 }

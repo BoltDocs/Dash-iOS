@@ -16,16 +16,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DHSearchResultsController.h"
 #import "DHWebViewController.h"
 
-@interface DHTocBrowser : UITableViewController
+@interface DHTocBrowser : UITableViewController <UISearchControllerDelegate, UISearchResultsUpdating, DHSearchResultsControllerDelegate>
 
 @property (strong) NSMutableArray *sections;
 @property (strong) NSMutableArray *sectionTitles;
 @property (strong) NSMutableArray *filteredSections;
 @property (strong) NSMutableArray *filteredSectionTitles;
-@property (weak) UISearchDisplayController *searchController;
-@property (assign) IBOutlet UISearchBar *searchBar;
+@property (weak) UISearchController *searchController;
 
 - (IBAction)dismissModal:(id)sender;
 

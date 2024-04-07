@@ -88,7 +88,7 @@
         }
         else
         {
-            [[controller.actualTOCBrowser searchDisplayController] setActive:NO animated:NO];
+            [[controller.actualTOCBrowser searchController] setActive:NO];
             [[controller.actualTOCBrowser presentingViewController] dismissViewControllerAnimated:YES completion:nil];
         }
         controller.lastTocBrowser = nil;
