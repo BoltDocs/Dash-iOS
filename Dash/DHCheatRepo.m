@@ -47,14 +47,15 @@ static id singleton = nil;
 
 - (void)reloadCheatsheetsIfNeeded
 {
-    if(!self.loading && (!self.lastListLoad || (!self.searchBar.text.length && [[NSDate date] timeIntervalSinceDate:self.lastListLoad] > 300)))
+    UISearchBar *searchBar = self.searchController.searchBar;
+    if(!self.loading && (!self.lastListLoad || (!searchBar.text.length && [[NSDate date] timeIntervalSinceDate:self.lastListLoad] > 300)))
     {
         self.loading = YES;
         BOOL shouldDelay = [self.loadingText contains:@"Retrying"];
         self.loadingText = nil;
-        self.searchBar.userInteractionEnabled = NO;
-        self.searchBar.alpha = 0.5;
-        self.searchBar.placeholder = @"Loading...";
+        searchBar.userInteractionEnabled = NO;
+        searchBar.alpha = 0.5;
+        searchBar.placeholder = @"Loading...";
         [self.tableView reloadData];
         dispatch_queue_t queue = dispatch_queue_create([[NSString stringWithFormat:@"%u", arc4random() % 100000] UTF8String], 0);
         dispatch_async(queue, ^{
@@ -83,9 +84,9 @@ static id singleton = nil;
                     [feeds sortUsingFunction:compareFeeds context:nil];
                     
                     self.lastListLoad = [NSDate date];
-                    self.searchBar.userInteractionEnabled = YES;
-                    self.searchBar.alpha = 1.0;
-                    self.searchBar.placeholder = @"Find cheat sheets to download";
+                    searchBar.userInteractionEnabled = YES;
+                    searchBar.alpha = 1.0;
+                    searchBar.placeholder = @"Find cheat sheets to download";
                     self.loading = NO;
                     self.feeds = feeds;
                     [self.tableView reloadData];

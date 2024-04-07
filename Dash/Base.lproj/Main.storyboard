@@ -487,14 +487,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" restorationIdentifier="DownloadSearchBar" placeholder="Find docsets to download" id="ibw-RZ-LKe">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            <connections>
-                                <outlet property="delegate" destination="bVq-xA-3wd" id="Ihj-hM-GF4"/>
-                            </connections>
-                        </searchBar>
                         <connections>
                             <outlet property="dataSource" destination="bVq-xA-3wd" id="nTB-cw-YaL"/>
                             <outlet property="delegate" destination="bVq-xA-3wd" id="kNS-Ag-j4A"/>
@@ -508,21 +500,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="searchBar" destination="ibw-RZ-LKe" id="Q52-Do-Tr4"/>
-                        <outlet property="searchDisplayController" destination="PMB-N5-wGr" id="pz9-mU-T4r"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xz-hu-dUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="PMB-N5-wGr">
-                    <connections>
-                        <outlet property="delegate" destination="bVq-xA-3wd" id="xQ2-19-HTr"/>
-                        <outlet property="searchBar" destination="ibw-RZ-LKe" id="N2f-yf-RkE"/>
-                        <outlet property="searchContentsController" destination="bVq-xA-3wd" id="lUZ-i4-ck1"/>
-                        <outlet property="searchResultsDataSource" destination="bVq-xA-3wd" id="SiM-kY-Q8J"/>
-                        <outlet property="searchResultsDelegate" destination="bVq-xA-3wd" id="wdp-p8-Zh2"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2445" y="-3288"/>
         </scene>
@@ -534,14 +513,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" restorationIdentifier="UserRepoSearchBar" placeholder="Find docsets to download" id="frS-D7-CD1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            <connections>
-                                <outlet property="delegate" destination="7Pl-oD-WzV" id="G9T-Rt-21p"/>
-                            </connections>
-                        </searchBar>
                         <connections>
                             <outlet property="dataSource" destination="7Pl-oD-WzV" id="VGy-Sm-bWh"/>
                             <outlet property="delegate" destination="7Pl-oD-WzV" id="PBv-CB-bY0"/>
@@ -555,21 +526,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="searchBar" destination="frS-D7-CD1" id="faI-Fs-5RH"/>
-                        <outlet property="searchDisplayController" destination="PMB-N5-wGr" id="UiB-JZ-mBV"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbY-qO-Frw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="NDK-Ah-hu2">
-                    <connections>
-                        <outlet property="delegate" destination="7Pl-oD-WzV" id="8Tv-80-sIu"/>
-                        <outlet property="searchBar" destination="frS-D7-CD1" id="L4k-b0-GNj"/>
-                        <outlet property="searchContentsController" destination="7Pl-oD-WzV" id="3mr-yZ-Dez"/>
-                        <outlet property="searchResultsDataSource" destination="7Pl-oD-WzV" id="dNb-KO-I0W"/>
-                        <outlet property="searchResultsDelegate" destination="7Pl-oD-WzV" id="hEh-mv-02t"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2445" y="-2618"/>
         </scene>
@@ -700,14 +658,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" restorationIdentifier="CheatRepoSearchBar" placeholder="Find cheat sheets to download" id="0Tx-yl-ZpH">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            <connections>
-                                <outlet property="delegate" destination="bSe-FO-aTh" id="tFS-Ty-amy"/>
-                            </connections>
-                        </searchBar>
                         <connections>
                             <outlet property="dataSource" destination="bSe-FO-aTh" id="ZXy-xZ-NcM"/>
                             <outlet property="delegate" destination="bSe-FO-aTh" id="hUe-NY-iYK"/>
@@ -721,21 +671,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="searchBar" destination="0Tx-yl-ZpH" id="pnt-J4-9nb"/>
-                        <outlet property="searchDisplayController" destination="PMB-N5-wGr" id="SJx-7j-3jo"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpb-DD-g0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="gvn-dN-aaF">
-                    <connections>
-                        <outlet property="delegate" destination="bSe-FO-aTh" id="tNi-fL-tpC"/>
-                        <outlet property="searchBar" destination="0Tx-yl-ZpH" id="0qn-rZ-zFT"/>
-                        <outlet property="searchContentsController" destination="bSe-FO-aTh" id="q2m-lz-cUb"/>
-                        <outlet property="searchResultsDataSource" destination="bSe-FO-aTh" id="FR4-Tz-wfo"/>
-                        <outlet property="searchResultsDelegate" destination="bSe-FO-aTh" id="PLW-Zm-zsW"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2445" y="-1928"/>
         </scene>

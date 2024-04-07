@@ -20,19 +20,19 @@
 #import "DHLatencyTester.h"
 #import "MRProgress.h"
 #import "DHDocsetIndexer.h"
+#import "DHSearchResultsController.h"
 #import "DHUnarchiver.h"
 
-@interface DHRepo : UITableViewController <UIActionSheetDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface DHRepo : UITableViewController <UIActionSheetDelegate, UISearchControllerDelegate, UISearchResultsUpdating, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, DHSearchResultsControllerDelegate>
 
 @property (strong) NSMutableArray *feeds;
 @property (strong) NSMutableArray *filteredFeeds;
 @property (assign) BOOL searchBarActive;
 @property (assign) BOOL searchBarActiveIsALie;
 @property (assign) BOOL didFirstReload;
-@property (weak) UISearchDisplayController *searchController;
+@property (weak) UISearchController *searchController;
 @property (strong) NSString *filterQuery;
 @property (weak) MRProgressOverlayView *updateOverlay;
-@property (assign) IBOutlet UISearchBar *searchBar;
 @property (assign) BOOL loading;
 @property (assign) NSString *loadingText;
 

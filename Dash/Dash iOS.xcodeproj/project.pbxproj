@@ -119,6 +119,7 @@
 		43FD2EFF19BB8D87007E594D /* DHDocsetBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FD2EFE19BB8D87007E594D /* DHDocsetBrowser.m */; };
 		43FD2F0219BB8D87007E594D /* DHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FD2F0119BB8D87007E594D /* DHWebViewController.m */; };
 		43FD2F0419BB8D87007E594D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43FD2F0319BB8D87007E594D /* Images.xcassets */; };
+		6BC7E1952BC274B500FF6619 /* DHSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC7E1942BC274B500FF6619 /* DHSearchResultsController.m */; };
 		7E8DE7D5E122E0462C6F23F2 /* libPods-Dash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8354C10EA45D4715E6C5EF /* libPods-Dash.a */; };
 		F5C39C00200A836D00734571 /* DHDocsetBrowserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C39BFF200A836D00734571 /* DHDocsetBrowserViewModel.m */; };
 /* End PBXBuildFile section */
@@ -327,6 +328,8 @@
 		43FD2F0119BB8D87007E594D /* DHWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHWebViewController.m; sourceTree = "<group>"; };
 		43FD2F0319BB8D87007E594D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		61D07DA70E11571714738D64 /* libPods-Dash-Dash App Store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dash-Dash App Store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BC7E1932BC274B500FF6619 /* DHSearchResultsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHSearchResultsController.h; sourceTree = "<group>"; };
+		6BC7E1942BC274B500FF6619 /* DHSearchResultsController.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = DHSearchResultsController.m; sourceTree = "<group>"; tabWidth = 4; };
 		7E45E2662CBB7671D0D844A3 /* Pods-Dash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dash.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Dash/Pods-Dash.release.xcconfig"; sourceTree = "<group>"; };
 		BAE47FF5DEE33300EBFF9AEA /* Pods-Dash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dash.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Dash/Pods-Dash.debug.xcconfig"; sourceTree = "<group>"; };
 		DC8354C10EA45D4715E6C5EF /* libPods-Dash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -649,6 +652,8 @@
 				43F760B119EA61B5002BD8A6 /* DHSearchDisplayController.m */,
 				43AF0E131D1861C600F0D8A0 /* DHAppleActiveLanguage.h */,
 				43AF0E141D1861CE00F0D8A0 /* DHAppleActiveLanguage.m */,
+				6BC7E1932BC274B500FF6619 /* DHSearchResultsController.h */,
+				6BC7E1942BC274B500FF6619 /* DHSearchResultsController.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -991,6 +996,7 @@
 				43915EE919C5D2FD002806FF /* UIView+DHUtils.m in Sources */,
 				438525E819C13ECE002BAFD1 /* NSString+DHUtils.m in Sources */,
 				4303A3BD19C6584F00A7CD85 /* FMDatabase.m in Sources */,
+				6BC7E1952BC274B500FF6619 /* DHSearchResultsController.m in Sources */,
 				4398D34619BF55B500457CAF /* DHPreferences.m in Sources */,
 				437FE06619E2AC0D0022ADF4 /* DHTypeBrowser.m in Sources */,
 				435145971DEB7035000874A8 /* DHCheatRepo.m in Sources */,

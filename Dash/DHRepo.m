@@ -22,6 +22,7 @@
 #import "DHDocsetTransferrer.h"
 #import "DHCheatRepo.h"
 #import "DHRightDetailLabel.h"
+#import "DHSearchResultsController.h"
 
 @implementation DHRepo
 
@@ -450,7 +451,8 @@
 
 - (UITableView *)activeTableView
 {
-    return (self.searchBarActive) ? self.searchController.searchResultsTableView : self.tableView;
+    DHSearchResultsController *searchResultsController = (DHSearchResultsController *)[self.searchController searchResultsController];
+    return (self.searchBarActive) ? searchResultsController.searchResultsTableView : self.tableView;
 }
 
 - (NSMutableArray *)activeFeeds
@@ -590,41 +592,36 @@
     return index;
 }
 
-- (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
+- (void)searchResultsController:(DHSearchResultsController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
 {
-    if(isIOS11)
-    {
-        if(@available(iOS 11.0, *))
-        {
-            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }
-    }
     [controller.searchResultsTableView registerNib:[UINib nibWithNibName:@"DHRepoCell" bundle:nil] forCellReuseIdentifier:@"DHRepoCell"];
     [controller.searchResultsTableView registerNib:[UINib nibWithNibName:@"DHLoadingCell" bundle:nil] forCellReuseIdentifier:@"DHLoadingCell"];
     tableView.allowsSelection = NO;
 }
 
-- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
+- (void)willPresentSearchController:(UISearchController *)controller
 {
     controller.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.searchController = controller;
     self.searchBarActive = YES;
     [self.tableView reloadSectionIndexTitles];
 }
 
-- (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
+- (void)willDismissSearchController:(UISearchController *)controller
 {
     self.searchBarActive = NO;
     [self reload];
 }
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+- (void)updateSearchResultsForSearchController:(UISearchController *)controller
 {
+    NSString *searchString = controller.searchBar.text;
     [self filterFeedsWithQuery:searchString];
-    return YES;
+    
+    DHSearchResultsController *searchResultsController = (DHSearchResultsController *)controller.searchResultsController;
+    [searchResultsController.searchResultsTableView reloadData];
 }
 
-- (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView
+- (void)searchResultsController:(DHSearchResultsController *)controller willHideSearchResultsTableView:(UITableView *)tableView
 {
     if(!self.searchBarActive)
     {
@@ -642,7 +639,7 @@
     [self.tableView reloadData];
 }
 
-- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+- (void)didDismissSearchController:(UISearchController *)controller
 {
     self.searchBarActive = NO;
 }
@@ -776,6 +773,22 @@
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"DHRepoCell" bundle:nil] forCellReuseIdentifier:@"DHRepoCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"DHLoadingCell" bundle:nil] forCellReuseIdentifier:@"DHLoadingCell"];
+    
+    DHSearchResultsController *searchResultsController = [[DHSearchResultsController alloc] init];
+    searchResultsController.delegate = self;
+    
+    UITableView *searchResultsTableView = searchResultsController.searchResultsTableView;
+    searchResultsTableView.delegate = self;
+    searchResultsTableView.dataSource = self;
+
+    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
+    searchController.delegate = self;
+    searchController.searchResultsUpdater = self;
+    searchController.hidesNavigationBarDuringPresentation = NO;
+
+    self.navigationItem.searchController = searchController;
+    
+    self.searchController = searchController;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -793,7 +806,7 @@
     if(self.searchController.isActive)
     {
         @try {
-            [self.searchController setActive:NO animated:NO];
+            [self.searchController setActive:NO];
         } @catch (NSException *exception) {
         }
     }
