@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -69,11 +69,11 @@
 		4390520019E692D90083A55E /* DHDBResultSorter.m in Sources */ = {isa = PBXBuildFile; fileRef = 439051FF19E692D90083A55E /* DHDBResultSorter.m */; };
 		43915EE919C5D2FD002806FF /* UIView+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43915EE819C5D2FD002806FF /* UIView+DHUtils.m */; };
 		4398D34619BF55B500457CAF /* DHPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4398D34519BF55B500457CAF /* DHPreferences.m */; };
-		43A1C2642001700600512DB3 /* Apple_Docs_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43A1C2642001700600512DB3 /* Apple_Docs_Framework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43A1C269200175B900512DB3 /* DHAppleAPIProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A1C268200175B900512DB3 /* DHAppleAPIProtocol.m */; };
 		43A1C26A200175B900512DB3 /* DHAppleAPIProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A1C268200175B900512DB3 /* DHAppleAPIProtocol.m */; };
-		43A1C26D200175E500512DB3 /* Apple_Docs_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.framework */; };
-		43A1C26E200175E500512DB3 /* Apple_Docs_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43A1C26D200175E500512DB3 /* Apple_Docs_Framework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.xcframework */; };
+		43A1C26E200175E500512DB3 /* Apple_Docs_Framework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43A356CB19FFCE4D0073D143 /* UIViewController+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A356CA19FFCE4D0073D143 /* UIViewController+DHUtils.m */; };
 		43A6D9C919E0D69700780BC8 /* DHDocsetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6D9C819E0D69700780BC8 /* DHDocsetManager.m */; };
 		43AAB7821AAE776800DB76F3 /* DHRemoteProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AAB7811AAE776800DB76F3 /* DHRemoteProtocol.m */; };
@@ -207,7 +207,7 @@
 		43BB045519ED48BD000FBC0D /* ClassRubyRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BB045119ED48BD000FBC0D /* ClassRubyRetina.png */; };
 		43BB045619ED48BD000FBC0D /* ModuleRuby.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BB045219ED48BD000FBC0D /* ModuleRuby.png */; };
 		43BB045719ED48BD000FBC0D /* ModuleRubyRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BB045319ED48BD000FBC0D /* ModuleRubyRetina.png */; };
-		43BCC3E4200442CA00DE24FE /* Apple_Docs_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.framework */; };
+		43BCC3E4200442CA00DE24FE /* Apple_Docs_Framework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1C2632001700600512DB3 /* Apple_Docs_Framework.xcframework */; };
 		43BD6BF41DCE379B0005A1E7 /* DHAppUpdateChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BD6BF31DCE379B0005A1E7 /* DHAppUpdateChecker.m */; };
 		43BD91EE1AB31A9E001058C4 /* hash_change_notifier.js in Resources */ = {isa = PBXBuildFile; fileRef = 43BD91ED1AB31A9E001058C4 /* hash_change_notifier.js */; };
 		43CF8AF119D5DA060010E698 /* NSURL+DHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CF8AF019D5DA060010E698 /* NSURL+DHUtils.m */; };
@@ -256,7 +256,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43A1C2642001700600512DB3 /* Apple_Docs_Framework.framework in Embed Frameworks */,
+				43A1C2642001700600512DB3 /* Apple_Docs_Framework.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +267,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43A1C26E200175E500512DB3 /* Apple_Docs_Framework.framework in Embed Frameworks */,
+				43A1C26E200175E500512DB3 /* Apple_Docs_Framework.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,7 +382,7 @@
 		43915EE819C5D2FD002806FF /* UIView+DHUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DHUtils.m"; sourceTree = "<group>"; };
 		4398D34419BF55B500457CAF /* DHPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPreferences.h; sourceTree = "<group>"; };
 		4398D34519BF55B500457CAF /* DHPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPreferences.m; sourceTree = "<group>"; };
-		43A1C2632001700600512DB3 /* Apple_Docs_Framework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apple_Docs_Framework.framework; path = ../Frameworks/Apple_Docs_Framework.framework; sourceTree = "<group>"; };
+		43A1C2632001700600512DB3 /* Apple_Docs_Framework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Apple_Docs_Framework.xcframework; path = ../Frameworks/Apple_Docs_Framework.xcframework; sourceTree = "<group>"; };
 		43A1C267200175B900512DB3 /* DHAppleAPIProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHAppleAPIProtocol.h; sourceTree = "<group>"; };
 		43A1C268200175B900512DB3 /* DHAppleAPIProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHAppleAPIProtocol.m; sourceTree = "<group>"; };
 		43A356C919FFCE4D0073D143 /* UIViewController+DHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DHUtils.h"; sourceTree = "<group>"; };
@@ -498,7 +498,7 @@
 				43AB65891ED19D2F00A6EC18 /* CoreGraphics.framework in Frameworks */,
 				43AB658A1ED19D2F00A6EC18 /* UIKit.framework in Frameworks */,
 				43AB658B1ED19D2F00A6EC18 /* Foundation.framework in Frameworks */,
-				43BCC3E4200442CA00DE24FE /* Apple_Docs_Framework.framework in Frameworks */,
+				43BCC3E4200442CA00DE24FE /* Apple_Docs_Framework.xcframework in Frameworks */,
 				02443EEDCC1F442C91E34654 /* libPods-Dash-Dash App Store.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,7 +514,7 @@
 				43FD2EE819BB8D87007E594D /* CoreGraphics.framework in Frameworks */,
 				43FD2EEA19BB8D87007E594D /* UIKit.framework in Frameworks */,
 				43FD2EE619BB8D87007E594D /* Foundation.framework in Frameworks */,
-				43A1C26D200175E500512DB3 /* Apple_Docs_Framework.framework in Frameworks */,
+				43A1C26D200175E500512DB3 /* Apple_Docs_Framework.xcframework in Frameworks */,
 				7E8DE7D5E122E0462C6F23F2 /* libPods-Dash.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -966,7 +966,7 @@
 		43FD2EE419BB8D87007E594D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43A1C2632001700600512DB3 /* Apple_Docs_Framework.framework */,
+				43A1C2632001700600512DB3 /* Apple_Docs_Framework.xcframework */,
 				43BB043E19ED0B19000FBC0D /* JavaScriptCore.framework */,
 				430C768C19E55E6E006F0DE0 /* MobileCoreServices.framework */,
 				437FE06719E2B4010022ADF4 /* WebKit.framework */,
@@ -1558,7 +1558,10 @@
 				IBSC_WARNINGS = NO;
 				INFOPLIST_FILE = "Dash-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1612,7 +1615,10 @@
 				IBSC_WARNINGS = NO;
 				INFOPLIST_FILE = "Dash-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1758,7 +1764,10 @@
 				IBSC_WARNINGS = NO;
 				INFOPLIST_FILE = "Dash-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1803,7 +1812,10 @@
 				IBSC_WARNINGS = NO;
 				INFOPLIST_FILE = "Dash-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
