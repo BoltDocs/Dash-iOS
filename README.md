@@ -1,6 +1,26 @@
-# Discontinued
+# Dash for iOS Fork
 
-Dash for iOS was [discontinued](https://blog.kapeli.com/goodbye-dash-for-ios). Please check out [Dash for macOS](https://kapeli.com/dash) instead.
+Dash for iOS was [discontinued](https://blog.kapeli.com/goodbye-dash-for-ios). This is a fork from [Bolt](https://boltdocs.app/) contributors.
+
+## Notable Changes
+
+* Migrate `UISearchDisplayController` to `UISearchController` to prevent crash on iOS 13+.
+
+* Remove update checking related code.
+
+* Remove unused CocoaPods dependencies.
+
+* Remove remote feature and related code.
+
+* Remove AppStore target.
+
+* Submit xcframework of `Apple_Docs_Framework` (with patched Mach-O header) to resolve linker errors.
+
+* Fix compiler errors.
+
+* Upgrade CocoaPods version.
+
+---
 
 # [Dash for iOS](https://kapeli.com/dash_ios)
 
